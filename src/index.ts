@@ -47,7 +47,7 @@ export class HexString extends DataStr {
     return new UintString(this.toBN().toString(10))
   }
 
-  toBuffer(): Buffer {
+  toBuffer (): Buffer {
     return Buffer.from(this.val.slice(2), 'hex')
   }
 }

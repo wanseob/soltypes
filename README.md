@@ -7,6 +7,7 @@ yarn add soltypes
 ```
 
 ## Examples
+
 ```typescript
 import { Bytes32, Uint256, Uint32, Address } from 'soltypes'
 
@@ -17,7 +18,7 @@ import { Bytes32, Uint256, Uint32, Address } from 'soltypes'
 // OK
 
 > Bytes32.from('1111111111111111111111111111111111111111111111111111111111111111')
-// ERROR - does not start with 0x 
+// ERROR - does not start with 0x
 
 > Bytes32.from('0x111111111111111')
 // ERROR - bytes length is not 32
