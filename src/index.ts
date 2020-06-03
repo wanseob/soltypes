@@ -46,6 +46,10 @@ export class HexString extends DataStr {
   toUintString (): UintString {
     return new UintString(this.toBN().toString(10))
   }
+
+  toBuffer(): Buffer {
+    return Buffer.from(this.val.slice(2), 'hex')
+  }
 }
 
 export class NumString extends DataStr {
