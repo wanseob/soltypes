@@ -94,10 +94,10 @@ describe('Bytes', () => {
       expect(() => Byte.from('0x1212')).toThrow()
     })
     test('does not accept non-0x string', () => {
-      expect(() => Byte.from('12').toUint8()).toThrow()
+      expect(() => Byte.from('12').toUint()).toThrow()
     })
     test('can convert to Uint8', () => {
-      expect(Byte.from('0x12').toUint8()).toBeDefined()
+      expect(Byte.from('0x12').toUint()).toBeDefined()
     })
   })
 
@@ -107,10 +107,10 @@ describe('Bytes', () => {
       expect(() => Bytes2.from('0x121212')).toThrow()
     })
     test('does not accept non-0x string', () => {
-      expect(() => Bytes2.from('1212').toUint16()).toThrow()
+      expect(() => Bytes2.from('1212').toUint()).toThrow()
     })
     test('can convert to Uint16', () => {
-      expect(Bytes2.from('0x1212').toUint16()).toBeDefined()
+      expect(Bytes2.from('0x1212').toUint()).toBeDefined()
     })
   })
 
@@ -120,10 +120,10 @@ describe('Bytes', () => {
       expect(() => Bytes3.from('0x12121212')).toThrow()
     })
     test('does not accept non-0x string', () => {
-      expect(() => Bytes3.from('121212').toUint24()).toThrow()
+      expect(() => Bytes3.from('121212').toUint()).toThrow()
     })
     test('can convert to Uint24', () => {
-      expect(Bytes3.from('0x121212').toUint24()).toBeDefined()
+      expect(Bytes3.from('0x121212').toUint()).toBeDefined()
     })
   })
 
@@ -133,10 +133,10 @@ describe('Bytes', () => {
       expect(() => Bytes4.from('0x1212121212')).toThrow()
     })
     test('does not accept non-0x string', () => {
-      expect(() => Bytes4.from('12121212').toUint32()).toThrow()
+      expect(() => Bytes4.from('12121212').toUint()).toThrow()
     })
     test('can convert to Uint32', () => {
-      expect(Bytes4.from('0x12121212').toUint32()).toBeDefined()
+      expect(Bytes4.from('0x12121212').toUint()).toBeDefined()
     })
   })
 
@@ -146,10 +146,10 @@ describe('Bytes', () => {
       expect(() => Bytes5.from('0x121212121212')).toThrow()
     })
     test('does not accept non-0x string', () => {
-      expect(() => Bytes5.from('1212121212').toUint40()).toThrow()
+      expect(() => Bytes5.from('1212121212').toUint()).toThrow()
     })
     test('can convert to Uint40', () => {
-      expect(Bytes5.from('0x1212121212').toUint40()).toBeDefined()
+      expect(Bytes5.from('0x1212121212').toUint()).toBeDefined()
     })
   })
 
@@ -159,10 +159,10 @@ describe('Bytes', () => {
       expect(() => Bytes6.from('0x12121212121212')).toThrow()
     })
     test('does not accept non-0x string', () => {
-      expect(() => Bytes6.from('121212121212').toUint48()).toThrow()
+      expect(() => Bytes6.from('121212121212').toUint()).toThrow()
     })
     test('can convert to Uint48', () => {
-      expect(Bytes6.from('0x121212121212').toUint48()).toBeDefined()
+      expect(Bytes6.from('0x121212121212').toUint()).toBeDefined()
     })
   })
 
@@ -172,10 +172,10 @@ describe('Bytes', () => {
       expect(() => Bytes7.from('0x1212121212121212')).toThrow()
     })
     test('does not accept non-0x string', () => {
-      expect(() => Bytes7.from('12121212121212').toUint56()).toThrow()
+      expect(() => Bytes7.from('12121212121212').toUint()).toThrow()
     })
     test('can convert to Uint56', () => {
-      expect(Bytes7.from('0x12121212121212').toUint56()).toBeDefined()
+      expect(Bytes7.from('0x12121212121212').toUint()).toBeDefined()
     })
   })
 
@@ -185,10 +185,10 @@ describe('Bytes', () => {
       expect(() => Bytes8.from('0x121212121212121212')).toThrow()
     })
     test('does not accept non-0x string', () => {
-      expect(() => Bytes8.from('1212121212121212').toUint64()).toThrow()
+      expect(() => Bytes8.from('1212121212121212').toUint()).toThrow()
     })
     test('can convert to Uint64', () => {
-      expect(Bytes8.from('0x1212121212121212').toUint64()).toBeDefined()
+      expect(Bytes8.from('0x1212121212121212').toUint()).toBeDefined()
     })
   })
 
@@ -198,10 +198,10 @@ describe('Bytes', () => {
       expect(() => Bytes9.from('0x12121212121212121212')).toThrow()
     })
     test('does not accept non-0x string', () => {
-      expect(() => Bytes9.from('121212121212121212').toUint72()).toThrow()
+      expect(() => Bytes9.from('121212121212121212').toUint()).toThrow()
     })
     test('can convert to Uint72', () => {
-      expect(Bytes9.from('0x121212121212121212').toUint72()).toBeDefined()
+      expect(Bytes9.from('0x121212121212121212').toUint()).toBeDefined()
     })
   })
 
@@ -211,10 +211,10 @@ describe('Bytes', () => {
       expect(() => Bytes10.from('0x1212121212121212121212')).toThrow()
     })
     test('does not accept non-0x string', () => {
-      expect(() => Bytes10.from('12121212121212121212').toUint80()).toThrow()
+      expect(() => Bytes10.from('12121212121212121212').toUint()).toThrow()
     })
     test('can convert to Uint80', () => {
-      expect(Bytes10.from('0x12121212121212121212').toUint80()).toBeDefined()
+      expect(Bytes10.from('0x12121212121212121212').toUint()).toBeDefined()
     })
   })
 
@@ -224,10 +224,10 @@ describe('Bytes', () => {
       expect(() => Bytes11.from('0x121212121212121212121212')).toThrow()
     })
     test('does not accept non-0x string', () => {
-      expect(() => Bytes11.from('1212121212121212121212').toUint88()).toThrow()
+      expect(() => Bytes11.from('1212121212121212121212').toUint()).toThrow()
     })
     test('can convert to Uint88', () => {
-      expect(Bytes11.from('0x1212121212121212121212').toUint88()).toBeDefined()
+      expect(Bytes11.from('0x1212121212121212121212').toUint()).toBeDefined()
     })
   })
 
@@ -237,14 +237,10 @@ describe('Bytes', () => {
       expect(() => Bytes12.from('0x12121212121212121212121212')).toThrow()
     })
     test('does not accept non-0x string', () => {
-      expect(() =>
-        Bytes12.from('121212121212121212121212').toUint96()
-      ).toThrow()
+      expect(() => Bytes12.from('121212121212121212121212').toUint()).toThrow()
     })
     test('can convert to Uint96', () => {
-      expect(
-        Bytes12.from('0x121212121212121212121212').toUint96()
-      ).toBeDefined()
+      expect(Bytes12.from('0x121212121212121212121212').toUint()).toBeDefined()
     })
   })
 
@@ -255,12 +251,12 @@ describe('Bytes', () => {
     })
     test('does not accept non-0x string', () => {
       expect(() =>
-        Bytes13.from('12121212121212121212121212').toUint104()
+        Bytes13.from('12121212121212121212121212').toUint()
       ).toThrow()
     })
     test('can convert to Uint104', () => {
       expect(
-        Bytes13.from('0x12121212121212121212121212').toUint104()
+        Bytes13.from('0x12121212121212121212121212').toUint()
       ).toBeDefined()
     })
   })
@@ -272,12 +268,12 @@ describe('Bytes', () => {
     })
     test('does not accept non-0x string', () => {
       expect(() =>
-        Bytes14.from('1212121212121212121212121212').toUint112()
+        Bytes14.from('1212121212121212121212121212').toUint()
       ).toThrow()
     })
     test('can convert to Uint112', () => {
       expect(
-        Bytes14.from('0x1212121212121212121212121212').toUint112()
+        Bytes14.from('0x1212121212121212121212121212').toUint()
       ).toBeDefined()
     })
   })
@@ -291,12 +287,12 @@ describe('Bytes', () => {
     })
     test('does not accept non-0x string', () => {
       expect(() =>
-        Bytes15.from('121212121212121212121212121212').toUint120()
+        Bytes15.from('121212121212121212121212121212').toUint()
       ).toThrow()
     })
     test('can convert to Uint120', () => {
       expect(
-        Bytes15.from('0x121212121212121212121212121212').toUint120()
+        Bytes15.from('0x121212121212121212121212121212').toUint()
       ).toBeDefined()
     })
   })
@@ -312,12 +308,12 @@ describe('Bytes', () => {
     })
     test('does not accept non-0x string', () => {
       expect(() =>
-        Bytes16.from('12121212121212121212121212121212').toUint128()
+        Bytes16.from('12121212121212121212121212121212').toUint()
       ).toThrow()
     })
     test('can convert to Uint128', () => {
       expect(
-        Bytes16.from('0x12121212121212121212121212121212').toUint128()
+        Bytes16.from('0x12121212121212121212121212121212').toUint()
       ).toBeDefined()
     })
   })
@@ -333,12 +329,12 @@ describe('Bytes', () => {
     })
     test('does not accept non-0x string', () => {
       expect(() =>
-        Bytes17.from('1212121212121212121212121212121212').toUint136()
+        Bytes17.from('1212121212121212121212121212121212').toUint()
       ).toThrow()
     })
     test('can convert to Uint136', () => {
       expect(
-        Bytes17.from('0x1212121212121212121212121212121212').toUint136()
+        Bytes17.from('0x1212121212121212121212121212121212').toUint()
       ).toBeDefined()
     })
   })
@@ -354,12 +350,12 @@ describe('Bytes', () => {
     })
     test('does not accept non-0x string', () => {
       expect(() =>
-        Bytes18.from('121212121212121212121212121212121212').toUint144()
+        Bytes18.from('121212121212121212121212121212121212').toUint()
       ).toThrow()
     })
     test('can convert to Uint144', () => {
       expect(
-        Bytes18.from('0x121212121212121212121212121212121212').toUint144()
+        Bytes18.from('0x121212121212121212121212121212121212').toUint()
       ).toBeDefined()
     })
   })
@@ -375,12 +371,12 @@ describe('Bytes', () => {
     })
     test('does not accept non-0x string', () => {
       expect(() =>
-        Bytes19.from('12121212121212121212121212121212121212').toUint152()
+        Bytes19.from('12121212121212121212121212121212121212').toUint()
       ).toThrow()
     })
     test('can convert to Uint152', () => {
       expect(
-        Bytes19.from('0x12121212121212121212121212121212121212').toUint152()
+        Bytes19.from('0x12121212121212121212121212121212121212').toUint()
       ).toBeDefined()
     })
   })
@@ -396,12 +392,12 @@ describe('Bytes', () => {
     })
     test('does not accept non-0x string', () => {
       expect(() =>
-        Bytes20.from('1212121212121212121212121212121212121212').toUint160()
+        Bytes20.from('1212121212121212121212121212121212121212').toUint()
       ).toThrow()
     })
     test('can convert to Uint160', () => {
       expect(
-        Bytes20.from('0x1212121212121212121212121212121212121212').toUint160()
+        Bytes20.from('0x1212121212121212121212121212121212121212').toUint()
       ).toBeDefined()
     })
   })
@@ -417,12 +413,12 @@ describe('Bytes', () => {
     })
     test('does not accept non-0x string', () => {
       expect(() =>
-        Bytes21.from('121212121212121212121212121212121212121212').toUint168()
+        Bytes21.from('121212121212121212121212121212121212121212').toUint()
       ).toThrow()
     })
     test('can convert to Uint168', () => {
       expect(
-        Bytes21.from('0x121212121212121212121212121212121212121212').toUint168()
+        Bytes21.from('0x121212121212121212121212121212121212121212').toUint()
       ).toBeDefined()
     })
   })
@@ -438,14 +434,12 @@ describe('Bytes', () => {
     })
     test('does not accept non-0x string', () => {
       expect(() =>
-        Bytes22.from('12121212121212121212121212121212121212121212').toUint176()
+        Bytes22.from('12121212121212121212121212121212121212121212').toUint()
       ).toThrow()
     })
     test('can convert to Uint176', () => {
       expect(
-        Bytes22.from(
-          '0x12121212121212121212121212121212121212121212'
-        ).toUint176()
+        Bytes22.from('0x12121212121212121212121212121212121212121212').toUint()
       ).toBeDefined()
     })
   })
@@ -461,16 +455,14 @@ describe('Bytes', () => {
     })
     test('does not accept non-0x string', () => {
       expect(() =>
-        Bytes23.from(
-          '1212121212121212121212121212121212121212121212'
-        ).toUint184()
+        Bytes23.from('1212121212121212121212121212121212121212121212').toUint()
       ).toThrow()
     })
     test('can convert to Uint184', () => {
       expect(
         Bytes23.from(
           '0x1212121212121212121212121212121212121212121212'
-        ).toUint184()
+        ).toUint()
       ).toBeDefined()
     })
   })
@@ -488,14 +480,14 @@ describe('Bytes', () => {
       expect(() =>
         Bytes24.from(
           '121212121212121212121212121212121212121212121212'
-        ).toUint192()
+        ).toUint()
       ).toThrow()
     })
     test('can convert to Uint192', () => {
       expect(
         Bytes24.from(
           '0x121212121212121212121212121212121212121212121212'
-        ).toUint192()
+        ).toUint()
       ).toBeDefined()
     })
   })
@@ -513,14 +505,14 @@ describe('Bytes', () => {
       expect(() =>
         Bytes25.from(
           '12121212121212121212121212121212121212121212121212'
-        ).toUint200()
+        ).toUint()
       ).toThrow()
     })
     test('can convert to Uint200', () => {
       expect(
         Bytes25.from(
           '0x12121212121212121212121212121212121212121212121212'
-        ).toUint200()
+        ).toUint()
       ).toBeDefined()
     })
   })
@@ -538,14 +530,14 @@ describe('Bytes', () => {
       expect(() =>
         Bytes26.from(
           '1212121212121212121212121212121212121212121212121212'
-        ).toUint208()
+        ).toUint()
       ).toThrow()
     })
     test('can convert to Uint208', () => {
       expect(
         Bytes26.from(
           '0x1212121212121212121212121212121212121212121212121212'
-        ).toUint208()
+        ).toUint()
       ).toBeDefined()
     })
   })
@@ -565,14 +557,14 @@ describe('Bytes', () => {
       expect(() =>
         Bytes27.from(
           '121212121212121212121212121212121212121212121212121212'
-        ).toUint216()
+        ).toUint()
       ).toThrow()
     })
     test('can convert to Uint216', () => {
       expect(
         Bytes27.from(
           '0x121212121212121212121212121212121212121212121212121212'
-        ).toUint216()
+        ).toUint()
       ).toBeDefined()
     })
   })
@@ -594,14 +586,14 @@ describe('Bytes', () => {
       expect(() =>
         Bytes28.from(
           '12121212121212121212121212121212121212121212121212121212'
-        ).toUint224()
+        ).toUint()
       ).toThrow()
     })
     test('can convert to Uint224', () => {
       expect(
         Bytes28.from(
           '0x12121212121212121212121212121212121212121212121212121212'
-        ).toUint224()
+        ).toUint()
       ).toBeDefined()
     })
   })
@@ -623,14 +615,14 @@ describe('Bytes', () => {
       expect(() =>
         Bytes29.from(
           '1212121212121212121212121212121212121212121212121212121212'
-        ).toUint232()
+        ).toUint()
       ).toThrow()
     })
     test('can convert to Uint232', () => {
       expect(
         Bytes29.from(
           '0x1212121212121212121212121212121212121212121212121212121212'
-        ).toUint232()
+        ).toUint()
       ).toBeDefined()
     })
   })
@@ -652,14 +644,14 @@ describe('Bytes', () => {
       expect(() =>
         Bytes30.from(
           '121212121212121212121212121212121212121212121212121212121212'
-        ).toUint240()
+        ).toUint()
       ).toThrow()
     })
     test('can convert to Uint240', () => {
       expect(
         Bytes30.from(
           '0x121212121212121212121212121212121212121212121212121212121212'
-        ).toUint240()
+        ).toUint()
       ).toBeDefined()
     })
   })
@@ -681,14 +673,14 @@ describe('Bytes', () => {
       expect(() =>
         Bytes31.from(
           '12121212121212121212121212121212121212121212121212121212121212'
-        ).toUint248()
+        ).toUint()
       ).toThrow()
     })
     test('can convert to Uint248', () => {
       expect(
         Bytes31.from(
           '0x12121212121212121212121212121212121212121212121212121212121212'
-        ).toUint248()
+        ).toUint()
       ).toBeDefined()
     })
   })
@@ -710,14 +702,14 @@ describe('Bytes', () => {
       expect(() =>
         Bytes32.from(
           '1212121212121212121212121212121212121212121212121212121212121212'
-        ).toUint256()
+        ).toUint()
       ).toThrow()
     })
     test('can convert to Uint256', () => {
       expect(
         Bytes32.from(
           '0x1212121212121212121212121212121212121212121212121212121212121212'
-        ).toUint256()
+        ).toUint()
       ).toBeDefined()
     })
   })
@@ -734,7 +726,7 @@ describe('Uint', () => {
       expect(() => Uint8.from('00')).not.toThrow()
     })
     test('can be converted to Byte', () => {
-      expect(() => Uint8.from('1').toByte()).toBeDefined()
+      expect(Uint8.from('1').toByte()).toBeInstanceOf(Byte)
     })
   })
 
@@ -748,7 +740,7 @@ describe('Uint', () => {
       expect(() => Uint16.from('00')).not.toThrow()
     })
     test('can be converted to Bytes2', () => {
-      expect(() => Uint16.from('12').toBytes2()).toBeDefined()
+      expect(Uint16.from('12').toBytes()).toBeInstanceOf(Bytes2)
     })
   })
 
@@ -762,7 +754,7 @@ describe('Uint', () => {
       expect(() => Uint24.from('00')).not.toThrow()
     })
     test('can be converted to Bytes3', () => {
-      expect(() => Uint24.from('255').toBytes3()).toBeDefined()
+      expect(Uint24.from('255').toBytes()).toBeInstanceOf(Bytes3)
     })
   })
 
@@ -776,7 +768,7 @@ describe('Uint', () => {
       expect(() => Uint32.from('00')).not.toThrow()
     })
     test('can be converted to Bytes4', () => {
-      expect(() => Uint32.from('65535').toBytes4()).toBeDefined()
+      expect(Uint32.from('65535').toBytes()).toBeInstanceOf(Bytes4)
     })
   })
 
@@ -790,7 +782,7 @@ describe('Uint', () => {
       expect(() => Uint40.from('00')).not.toThrow()
     })
     test('can be converted to Bytes5', () => {
-      expect(() => Uint40.from('16777215').toBytes5()).toBeDefined()
+      expect(Uint40.from('16777215').toBytes()).toBeInstanceOf(Bytes5)
     })
   })
 
@@ -804,7 +796,7 @@ describe('Uint', () => {
       expect(() => Uint48.from('00')).not.toThrow()
     })
     test('can be converted to Bytes6', () => {
-      expect(() => Uint48.from('4294967295').toBytes6()).toBeDefined()
+      expect(Uint48.from('4294967295').toBytes()).toBeInstanceOf(Bytes6)
     })
   })
 
@@ -818,7 +810,7 @@ describe('Uint', () => {
       expect(() => Uint56.from('00')).not.toThrow()
     })
     test('can be converted to Bytes7', () => {
-      expect(() => Uint56.from('1099511627775').toBytes7()).toBeDefined()
+      expect(Uint56.from('1099511627775').toBytes()).toBeInstanceOf(Bytes7)
     })
   })
 
@@ -832,7 +824,7 @@ describe('Uint', () => {
       expect(() => Uint64.from('00')).not.toThrow()
     })
     test('can be converted to Bytes8', () => {
-      expect(() => Uint64.from('281474976710655').toBytes8()).toBeDefined()
+      expect(Uint64.from('281474976710655').toBytes()).toBeInstanceOf(Bytes8)
     })
   })
 
@@ -846,7 +838,7 @@ describe('Uint', () => {
       expect(() => Uint72.from('00')).not.toThrow()
     })
     test('can be converted to Bytes9', () => {
-      expect(() => Uint72.from('72057594037927935').toBytes9()).toBeDefined()
+      expect(Uint72.from('72057594037927935').toBytes()).toBeInstanceOf(Bytes9)
     })
   })
 
@@ -860,9 +852,9 @@ describe('Uint', () => {
       expect(() => Uint80.from('00')).not.toThrow()
     })
     test('can be converted to Bytes10', () => {
-      expect(() =>
-        Uint80.from('18446744073709551615').toBytes10()
-      ).toBeDefined()
+      expect(Uint80.from('18446744073709551615').toBytes()).toBeInstanceOf(
+        Bytes10
+      )
     })
   })
 
@@ -876,9 +868,9 @@ describe('Uint', () => {
       expect(() => Uint88.from('00')).not.toThrow()
     })
     test('can be converted to Bytes11', () => {
-      expect(() =>
-        Uint88.from('4722366482869645213695').toBytes11()
-      ).toBeDefined()
+      expect(Uint88.from('4722366482869645213695').toBytes()).toBeInstanceOf(
+        Bytes11
+      )
     })
   })
 
@@ -892,9 +884,9 @@ describe('Uint', () => {
       expect(() => Uint96.from('00')).not.toThrow()
     })
     test('can be converted to Bytes12', () => {
-      expect(() =>
-        Uint96.from('1208925819614629174706175').toBytes12()
-      ).toBeDefined()
+      expect(Uint96.from('1208925819614629174706175').toBytes()).toBeInstanceOf(
+        Bytes12
+      )
     })
   })
 
@@ -910,9 +902,9 @@ describe('Uint', () => {
       expect(() => Uint104.from('00')).not.toThrow()
     })
     test('can be converted to Bytes13', () => {
-      expect(() =>
-        Uint104.from('309485009821345068724781055').toBytes13()
-      ).toBeDefined()
+      expect(
+        Uint104.from('309485009821345068724781055').toBytes()
+      ).toBeInstanceOf(Bytes13)
     })
   })
 
@@ -928,9 +920,9 @@ describe('Uint', () => {
       expect(() => Uint112.from('00')).not.toThrow()
     })
     test('can be converted to Bytes14', () => {
-      expect(() =>
-        Uint112.from('79228162514264337593543950335').toBytes14()
-      ).toBeDefined()
+      expect(
+        Uint112.from('79228162514264337593543950335').toBytes()
+      ).toBeInstanceOf(Bytes14)
     })
   })
 
@@ -948,9 +940,9 @@ describe('Uint', () => {
       expect(() => Uint120.from('00')).not.toThrow()
     })
     test('can be converted to Bytes15', () => {
-      expect(() =>
-        Uint120.from('20282409603651670423947251286015').toBytes15()
-      ).toBeDefined()
+      expect(
+        Uint120.from('20282409603651670423947251286015').toBytes()
+      ).toBeInstanceOf(Bytes15)
     })
   })
 
@@ -968,9 +960,9 @@ describe('Uint', () => {
       expect(() => Uint128.from('00')).not.toThrow()
     })
     test('can be converted to Bytes16', () => {
-      expect(() =>
-        Uint128.from('5192296858534827628530496329220095').toBytes16()
-      ).toBeDefined()
+      expect(
+        Uint128.from('5192296858534827628530496329220095').toBytes()
+      ).toBeInstanceOf(Bytes16)
     })
   })
 
@@ -988,9 +980,9 @@ describe('Uint', () => {
       expect(() => Uint136.from('00')).not.toThrow()
     })
     test('can be converted to Bytes17', () => {
-      expect(() =>
-        Uint136.from('1329227995784915872903807060280344575').toBytes17()
-      ).toBeDefined()
+      expect(
+        Uint136.from('1329227995784915872903807060280344575').toBytes()
+      ).toBeInstanceOf(Bytes17)
     })
   })
 
@@ -1008,9 +1000,9 @@ describe('Uint', () => {
       expect(() => Uint144.from('00')).not.toThrow()
     })
     test('can be converted to Bytes18', () => {
-      expect(() =>
-        Uint144.from('340282366920938463463374607431768211455').toBytes18()
-      ).toBeDefined()
+      expect(
+        Uint144.from('340282366920938463463374607431768211455').toBytes()
+      ).toBeInstanceOf(Bytes18)
     })
   })
 
@@ -1028,9 +1020,9 @@ describe('Uint', () => {
       expect(() => Uint152.from('00')).not.toThrow()
     })
     test('can be converted to Bytes19', () => {
-      expect(() =>
-        Uint152.from('87112285931760246646623899502532662132735').toBytes19()
-      ).toBeDefined()
+      expect(
+        Uint152.from('87112285931760246646623899502532662132735').toBytes()
+      ).toBeInstanceOf(Bytes19)
     })
   })
 
@@ -1048,9 +1040,9 @@ describe('Uint', () => {
       expect(() => Uint160.from('00')).not.toThrow()
     })
     test('can be converted to Bytes20', () => {
-      expect(() =>
-        Uint160.from('22300745198530623141535718272648361505980415').toBytes20()
-      ).toBeDefined()
+      expect(
+        Uint160.from('22300745198530623141535718272648361505980415').toBytes()
+      ).toBeInstanceOf(Bytes20)
     })
   })
 
@@ -1068,11 +1060,9 @@ describe('Uint', () => {
       expect(() => Uint168.from('00')).not.toThrow()
     })
     test('can be converted to Bytes21', () => {
-      expect(() =>
-        Uint168.from(
-          '5708990770823839524233143877797980545530986495'
-        ).toBytes21()
-      ).toBeDefined()
+      expect(
+        Uint168.from('5708990770823839524233143877797980545530986495').toBytes()
+      ).toBeInstanceOf(Bytes21)
     })
   })
 
@@ -1090,11 +1080,11 @@ describe('Uint', () => {
       expect(() => Uint176.from('00')).not.toThrow()
     })
     test('can be converted to Bytes22', () => {
-      expect(() =>
+      expect(
         Uint176.from(
           '1461501637330902918203684832716283019655932542975'
-        ).toBytes22()
-      ).toBeDefined()
+        ).toBytes()
+      ).toBeInstanceOf(Bytes22)
     })
   })
 
@@ -1112,11 +1102,11 @@ describe('Uint', () => {
       expect(() => Uint184.from('00')).not.toThrow()
     })
     test('can be converted to Bytes23', () => {
-      expect(() =>
+      expect(
         Uint184.from(
           '374144419156711147060143317175368453031918731001855'
-        ).toBytes23()
-      ).toBeDefined()
+        ).toBytes()
+      ).toBeInstanceOf(Bytes23)
     })
   })
 
@@ -1138,11 +1128,11 @@ describe('Uint', () => {
       expect(() => Uint192.from('00')).not.toThrow()
     })
     test('can be converted to Bytes24', () => {
-      expect(() =>
+      expect(
         Uint192.from(
           '95780971304118053647396689196894323976171195136475135'
-        ).toBytes24()
-      ).toBeDefined()
+        ).toBytes()
+      ).toBeInstanceOf(Bytes24)
     })
   })
 
@@ -1164,11 +1154,11 @@ describe('Uint', () => {
       expect(() => Uint200.from('00')).not.toThrow()
     })
     test('can be converted to Bytes25', () => {
-      expect(() =>
+      expect(
         Uint200.from(
           '24519928653854221733733552434404946937899825954937634815'
-        ).toBytes25()
-      ).toBeDefined()
+        ).toBytes()
+      ).toBeInstanceOf(Bytes25)
     })
   })
 
@@ -1190,11 +1180,11 @@ describe('Uint', () => {
       expect(() => Uint208.from('00')).not.toThrow()
     })
     test('can be converted to Bytes26', () => {
-      expect(() =>
+      expect(
         Uint208.from(
           '6277101735386680763835789423207666416102355444464034512895'
-        ).toBytes26()
-      ).toBeDefined()
+        ).toBytes()
+      ).toBeInstanceOf(Bytes26)
     })
   })
 
@@ -1216,11 +1206,11 @@ describe('Uint', () => {
       expect(() => Uint216.from('00')).not.toThrow()
     })
     test('can be converted to Bytes27', () => {
-      expect(() =>
+      expect(
         Uint216.from(
           '1606938044258990275541962092341162602522202993782792835301375'
-        ).toBytes27()
-      ).toBeDefined()
+        ).toBytes()
+      ).toBeInstanceOf(Bytes27)
     })
   })
 
@@ -1242,11 +1232,11 @@ describe('Uint', () => {
       expect(() => Uint224.from('00')).not.toThrow()
     })
     test('can be converted to Bytes28', () => {
-      expect(() =>
+      expect(
         Uint224.from(
           '411376139330301510538742295639337626245683966408394965837152255'
-        ).toBytes28()
-      ).toBeDefined()
+        ).toBytes()
+      ).toBeInstanceOf(Bytes28)
     })
   })
 
@@ -1268,11 +1258,11 @@ describe('Uint', () => {
       expect(() => Uint232.from('00')).not.toThrow()
     })
     test('can be converted to Bytes29', () => {
-      expect(() =>
+      expect(
         Uint232.from(
           '105312291668557186697918027683670432318895095400549111254310977535'
-        ).toBytes29()
-      ).toBeDefined()
+        ).toBytes()
+      ).toBeInstanceOf(Bytes29)
     })
   })
 
@@ -1294,11 +1284,11 @@ describe('Uint', () => {
       expect(() => Uint240.from('00')).not.toThrow()
     })
     test('can be converted to Bytes30', () => {
-      expect(() =>
+      expect(
         Uint240.from(
           '26959946667150639794667015087019630673637144422540572481103610249215'
-        ).toBytes30()
-      ).toBeDefined()
+        ).toBytes()
+      ).toBeInstanceOf(Bytes30)
     })
   })
 
@@ -1320,11 +1310,11 @@ describe('Uint', () => {
       expect(() => Uint248.from('00')).not.toThrow()
     })
     test('can be converted to Bytes31', () => {
-      expect(() =>
+      expect(
         Uint248.from(
           '6901746346790563787434755862277025452451108972170386555162524223799295'
-        ).toBytes31()
-      ).toBeDefined()
+        ).toBytes()
+      ).toBeInstanceOf(Bytes31)
     })
   })
 
@@ -1346,11 +1336,11 @@ describe('Uint', () => {
       expect(() => Uint256.from('00')).not.toThrow()
     })
     test('can be converted to Bytes32', () => {
-      expect(() =>
+      expect(
         Uint256.from(
           '1766847064778384329583297500742918515827483896875618958121606201292619775'
-        ).toBytes32()
-      ).toBeDefined()
+        ).toBytes()
+      ).toBeInstanceOf(Bytes32)
     })
   })
 })

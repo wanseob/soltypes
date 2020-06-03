@@ -68,7 +68,17 @@ export class NumString extends DataStr {
   toBN (): BN {
     return new BN(this.val, 10)
   }
+
+  toBytes (): HexString {
+    return new HexString(`0x${this.toBN().toString(16)}`)
+  }
+
+  toBuffer (): Buffer {
+    return this.toBytes().toBuffer()
+  }
 }
+
+export type bytes = 'byte' | 'bytes2' | 'bytes3'
 
 export class UintString extends NumString {
   isUint = true
@@ -135,7 +145,7 @@ export class Byte extends HexString {
     return new Byte(val)
   }
 
-  toUint8 (): Uint8 {
+  toUint (): Uint8 {
     return new Uint8(this.toBN().toString(10))
   }
 }
@@ -152,7 +162,7 @@ export class Bytes2 extends HexString {
     return new Bytes2(val)
   }
 
-  toUint16 (): Uint16 {
+  toUint (): Uint16 {
     return new Uint16(this.toBN().toString(10))
   }
 }
@@ -169,7 +179,7 @@ export class Bytes3 extends HexString {
     return new Bytes3(val)
   }
 
-  toUint24 (): Uint24 {
+  toUint (): Uint24 {
     return new Uint24(this.toBN().toString(10))
   }
 }
@@ -186,7 +196,7 @@ export class Bytes4 extends HexString {
     return new Bytes4(val)
   }
 
-  toUint32 (): Uint32 {
+  toUint (): Uint32 {
     return new Uint32(this.toBN().toString(10))
   }
 }
@@ -203,7 +213,7 @@ export class Bytes5 extends HexString {
     return new Bytes5(val)
   }
 
-  toUint40 (): Uint40 {
+  toUint (): Uint40 {
     return new Uint40(this.toBN().toString(10))
   }
 }
@@ -220,7 +230,7 @@ export class Bytes6 extends HexString {
     return new Bytes6(val)
   }
 
-  toUint48 (): Uint48 {
+  toUint (): Uint48 {
     return new Uint48(this.toBN().toString(10))
   }
 }
@@ -237,7 +247,7 @@ export class Bytes7 extends HexString {
     return new Bytes7(val)
   }
 
-  toUint56 (): Uint56 {
+  toUint (): Uint56 {
     return new Uint56(this.toBN().toString(10))
   }
 }
@@ -254,7 +264,7 @@ export class Bytes8 extends HexString {
     return new Bytes8(val)
   }
 
-  toUint64 (): Uint64 {
+  toUint (): Uint64 {
     return new Uint64(this.toBN().toString(10))
   }
 }
@@ -271,7 +281,7 @@ export class Bytes9 extends HexString {
     return new Bytes9(val)
   }
 
-  toUint72 (): Uint72 {
+  toUint (): Uint72 {
     return new Uint72(this.toBN().toString(10))
   }
 }
@@ -288,7 +298,7 @@ export class Bytes10 extends HexString {
     return new Bytes10(val)
   }
 
-  toUint80 (): Uint80 {
+  toUint (): Uint80 {
     return new Uint80(this.toBN().toString(10))
   }
 }
@@ -305,7 +315,7 @@ export class Bytes11 extends HexString {
     return new Bytes11(val)
   }
 
-  toUint88 (): Uint88 {
+  toUint (): Uint88 {
     return new Uint88(this.toBN().toString(10))
   }
 }
@@ -322,7 +332,7 @@ export class Bytes12 extends HexString {
     return new Bytes12(val)
   }
 
-  toUint96 (): Uint96 {
+  toUint (): Uint96 {
     return new Uint96(this.toBN().toString(10))
   }
 }
@@ -339,7 +349,7 @@ export class Bytes13 extends HexString {
     return new Bytes13(val)
   }
 
-  toUint104 (): Uint104 {
+  toUint (): Uint104 {
     return new Uint104(this.toBN().toString(10))
   }
 }
@@ -356,7 +366,7 @@ export class Bytes14 extends HexString {
     return new Bytes14(val)
   }
 
-  toUint112 (): Uint112 {
+  toUint (): Uint112 {
     return new Uint112(this.toBN().toString(10))
   }
 }
@@ -373,7 +383,7 @@ export class Bytes15 extends HexString {
     return new Bytes15(val)
   }
 
-  toUint120 (): Uint120 {
+  toUint (): Uint120 {
     return new Uint120(this.toBN().toString(10))
   }
 }
@@ -390,7 +400,7 @@ export class Bytes16 extends HexString {
     return new Bytes16(val)
   }
 
-  toUint128 (): Uint128 {
+  toUint (): Uint128 {
     return new Uint128(this.toBN().toString(10))
   }
 }
@@ -407,7 +417,7 @@ export class Bytes17 extends HexString {
     return new Bytes17(val)
   }
 
-  toUint136 (): Uint136 {
+  toUint (): Uint136 {
     return new Uint136(this.toBN().toString(10))
   }
 }
@@ -424,7 +434,7 @@ export class Bytes18 extends HexString {
     return new Bytes18(val)
   }
 
-  toUint144 (): Uint144 {
+  toUint (): Uint144 {
     return new Uint144(this.toBN().toString(10))
   }
 }
@@ -441,7 +451,7 @@ export class Bytes19 extends HexString {
     return new Bytes19(val)
   }
 
-  toUint152 (): Uint152 {
+  toUint (): Uint152 {
     return new Uint152(this.toBN().toString(10))
   }
 }
@@ -458,7 +468,7 @@ export class Bytes20 extends HexString {
     return new Bytes20(val)
   }
 
-  toUint160 (): Uint160 {
+  toUint (): Uint160 {
     return new Uint160(this.toBN().toString(10))
   }
 }
@@ -475,7 +485,7 @@ export class Bytes21 extends HexString {
     return new Bytes21(val)
   }
 
-  toUint168 (): Uint168 {
+  toUint (): Uint168 {
     return new Uint168(this.toBN().toString(10))
   }
 }
@@ -492,7 +502,7 @@ export class Bytes22 extends HexString {
     return new Bytes22(val)
   }
 
-  toUint176 (): Uint176 {
+  toUint (): Uint176 {
     return new Uint176(this.toBN().toString(10))
   }
 }
@@ -509,7 +519,7 @@ export class Bytes23 extends HexString {
     return new Bytes23(val)
   }
 
-  toUint184 (): Uint184 {
+  toUint (): Uint184 {
     return new Uint184(this.toBN().toString(10))
   }
 }
@@ -526,7 +536,7 @@ export class Bytes24 extends HexString {
     return new Bytes24(val)
   }
 
-  toUint192 (): Uint192 {
+  toUint (): Uint192 {
     return new Uint192(this.toBN().toString(10))
   }
 }
@@ -543,7 +553,7 @@ export class Bytes25 extends HexString {
     return new Bytes25(val)
   }
 
-  toUint200 (): Uint200 {
+  toUint (): Uint200 {
     return new Uint200(this.toBN().toString(10))
   }
 }
@@ -560,7 +570,7 @@ export class Bytes26 extends HexString {
     return new Bytes26(val)
   }
 
-  toUint208 (): Uint208 {
+  toUint (): Uint208 {
     return new Uint208(this.toBN().toString(10))
   }
 }
@@ -577,7 +587,7 @@ export class Bytes27 extends HexString {
     return new Bytes27(val)
   }
 
-  toUint216 (): Uint216 {
+  toUint (): Uint216 {
     return new Uint216(this.toBN().toString(10))
   }
 }
@@ -594,7 +604,7 @@ export class Bytes28 extends HexString {
     return new Bytes28(val)
   }
 
-  toUint224 (): Uint224 {
+  toUint (): Uint224 {
     return new Uint224(this.toBN().toString(10))
   }
 }
@@ -611,7 +621,7 @@ export class Bytes29 extends HexString {
     return new Bytes29(val)
   }
 
-  toUint232 (): Uint232 {
+  toUint (): Uint232 {
     return new Uint232(this.toBN().toString(10))
   }
 }
@@ -628,7 +638,7 @@ export class Bytes30 extends HexString {
     return new Bytes30(val)
   }
 
-  toUint240 (): Uint240 {
+  toUint (): Uint240 {
     return new Uint240(this.toBN().toString(10))
   }
 }
@@ -645,7 +655,7 @@ export class Bytes31 extends HexString {
     return new Bytes31(val)
   }
 
-  toUint248 (): Uint248 {
+  toUint (): Uint248 {
     return new Uint248(this.toBN().toString(10))
   }
 }
@@ -662,7 +672,7 @@ export class Bytes32 extends HexString {
     return new Bytes32(val)
   }
 
-  toUint256 (): Uint256 {
+  toUint (): Uint256 {
     return new Uint256(this.toBN().toString(10))
   }
 }
@@ -690,7 +700,8 @@ export class Uint16 extends UintString {
   static from (val: string): Uint16 {
     return new Uint16(val)
   }
-  toBytes2 (): Bytes2 {
+
+  toBytes (): Bytes2 {
     return new Bytes2(`0x${this.toBN().toString(16, 4)}`)
   }
 }
@@ -704,7 +715,7 @@ export class Uint24 extends UintString {
   static from (val: string): Uint24 {
     return new Uint24(val)
   }
-  toBytes3 (): Bytes3 {
+  toBytes (): Bytes3 {
     return new Bytes3(`0x${this.toBN().toString(16, 6)}`)
   }
 }
@@ -718,7 +729,7 @@ export class Uint32 extends UintString {
   static from (val: string): Uint32 {
     return new Uint32(val)
   }
-  toBytes4 (): Bytes4 {
+  toBytes (): Bytes4 {
     return new Bytes4(`0x${this.toBN().toString(16, 8)}`)
   }
 }
@@ -732,7 +743,7 @@ export class Uint40 extends UintString {
   static from (val: string): Uint40 {
     return new Uint40(val)
   }
-  toBytes5 (): Bytes5 {
+  toBytes (): Bytes5 {
     return new Bytes5(`0x${this.toBN().toString(16, 10)}`)
   }
 }
@@ -746,7 +757,7 @@ export class Uint48 extends UintString {
   static from (val: string): Uint48 {
     return new Uint48(val)
   }
-  toBytes6 (): Bytes6 {
+  toBytes (): Bytes6 {
     return new Bytes6(`0x${this.toBN().toString(16, 12)}`)
   }
 }
@@ -760,7 +771,7 @@ export class Uint56 extends UintString {
   static from (val: string): Uint56 {
     return new Uint56(val)
   }
-  toBytes7 (): Bytes7 {
+  toBytes (): Bytes7 {
     return new Bytes7(`0x${this.toBN().toString(16, 14)}`)
   }
 }
@@ -774,7 +785,7 @@ export class Uint64 extends UintString {
   static from (val: string): Uint64 {
     return new Uint64(val)
   }
-  toBytes8 (): Bytes8 {
+  toBytes (): Bytes8 {
     return new Bytes8(`0x${this.toBN().toString(16, 16)}`)
   }
 }
@@ -788,7 +799,7 @@ export class Uint72 extends UintString {
   static from (val: string): Uint72 {
     return new Uint72(val)
   }
-  toBytes9 (): Bytes9 {
+  toBytes (): Bytes9 {
     return new Bytes9(`0x${this.toBN().toString(16, 18)}`)
   }
 }
@@ -802,7 +813,7 @@ export class Uint80 extends UintString {
   static from (val: string): Uint80 {
     return new Uint80(val)
   }
-  toBytes10 (): Bytes10 {
+  toBytes (): Bytes10 {
     return new Bytes10(`0x${this.toBN().toString(16, 20)}`)
   }
 }
@@ -816,7 +827,7 @@ export class Uint88 extends UintString {
   static from (val: string): Uint88 {
     return new Uint88(val)
   }
-  toBytes11 (): Bytes11 {
+  toBytes (): Bytes11 {
     return new Bytes11(`0x${this.toBN().toString(16, 22)}`)
   }
 }
@@ -830,7 +841,7 @@ export class Uint96 extends UintString {
   static from (val: string): Uint96 {
     return new Uint96(val)
   }
-  toBytes12 (): Bytes12 {
+  toBytes (): Bytes12 {
     return new Bytes12(`0x${this.toBN().toString(16, 24)}`)
   }
 }
@@ -844,7 +855,7 @@ export class Uint104 extends UintString {
   static from (val: string): Uint104 {
     return new Uint104(val)
   }
-  toBytes13 (): Bytes13 {
+  toBytes (): Bytes13 {
     return new Bytes13(`0x${this.toBN().toString(16, 26)}`)
   }
 }
@@ -858,7 +869,7 @@ export class Uint112 extends UintString {
   static from (val: string): Uint112 {
     return new Uint112(val)
   }
-  toBytes14 (): Bytes14 {
+  toBytes (): Bytes14 {
     return new Bytes14(`0x${this.toBN().toString(16, 28)}`)
   }
 }
@@ -872,7 +883,7 @@ export class Uint120 extends UintString {
   static from (val: string): Uint120 {
     return new Uint120(val)
   }
-  toBytes15 (): Bytes15 {
+  toBytes (): Bytes15 {
     return new Bytes15(`0x${this.toBN().toString(16, 30)}`)
   }
 }
@@ -886,7 +897,7 @@ export class Uint128 extends UintString {
   static from (val: string): Uint128 {
     return new Uint128(val)
   }
-  toBytes16 (): Bytes16 {
+  toBytes (): Bytes16 {
     return new Bytes16(`0x${this.toBN().toString(16, 32)}`)
   }
 }
@@ -900,7 +911,7 @@ export class Uint136 extends UintString {
   static from (val: string): Uint136 {
     return new Uint136(val)
   }
-  toBytes17 (): Bytes17 {
+  toBytes (): Bytes17 {
     return new Bytes17(`0x${this.toBN().toString(16, 34)}`)
   }
 }
@@ -914,7 +925,7 @@ export class Uint144 extends UintString {
   static from (val: string): Uint144 {
     return new Uint144(val)
   }
-  toBytes18 (): Bytes18 {
+  toBytes (): Bytes18 {
     return new Bytes18(`0x${this.toBN().toString(16, 36)}`)
   }
 }
@@ -928,7 +939,7 @@ export class Uint152 extends UintString {
   static from (val: string): Uint152 {
     return new Uint152(val)
   }
-  toBytes19 (): Bytes19 {
+  toBytes (): Bytes19 {
     return new Bytes19(`0x${this.toBN().toString(16, 38)}`)
   }
 }
@@ -942,7 +953,7 @@ export class Uint160 extends UintString {
   static from (val: string): Uint160 {
     return new Uint160(val)
   }
-  toBytes20 (): Bytes20 {
+  toBytes (): Bytes20 {
     return new Bytes20(`0x${this.toBN().toString(16, 40)}`)
   }
 }
@@ -956,7 +967,7 @@ export class Uint168 extends UintString {
   static from (val: string): Uint168 {
     return new Uint168(val)
   }
-  toBytes21 (): Bytes21 {
+  toBytes (): Bytes21 {
     return new Bytes21(`0x${this.toBN().toString(16, 42)}`)
   }
 }
@@ -972,7 +983,7 @@ export class Uint176 extends UintString {
   static from (val: string): Uint176 {
     return new Uint176(val)
   }
-  toBytes22 (): Bytes22 {
+  toBytes (): Bytes22 {
     return new Bytes22(`0x${this.toBN().toString(16, 44)}`)
   }
 }
@@ -988,7 +999,7 @@ export class Uint184 extends UintString {
   static from (val: string): Uint184 {
     return new Uint184(val)
   }
-  toBytes23 (): Bytes23 {
+  toBytes (): Bytes23 {
     return new Bytes23(`0x${this.toBN().toString(16, 46)}`)
   }
 }
@@ -1004,7 +1015,7 @@ export class Uint192 extends UintString {
   static from (val: string): Uint192 {
     return new Uint192(val)
   }
-  toBytes24 (): Bytes24 {
+  toBytes (): Bytes24 {
     return new Bytes24(`0x${this.toBN().toString(16, 48)}`)
   }
 }
@@ -1020,7 +1031,7 @@ export class Uint200 extends UintString {
   static from (val: string): Uint200 {
     return new Uint200(val)
   }
-  toBytes25 (): Bytes25 {
+  toBytes (): Bytes25 {
     return new Bytes25(`0x${this.toBN().toString(16, 50)}`)
   }
 }
@@ -1036,7 +1047,7 @@ export class Uint208 extends UintString {
   static from (val: string): Uint208 {
     return new Uint208(val)
   }
-  toBytes26 (): Bytes26 {
+  toBytes (): Bytes26 {
     return new Bytes26(`0x${this.toBN().toString(16, 52)}`)
   }
 }
@@ -1052,7 +1063,7 @@ export class Uint216 extends UintString {
   static from (val: string): Uint216 {
     return new Uint216(val)
   }
-  toBytes27 (): Bytes27 {
+  toBytes (): Bytes27 {
     return new Bytes27(`0x${this.toBN().toString(16, 54)}`)
   }
 }
@@ -1068,7 +1079,7 @@ export class Uint224 extends UintString {
   static from (val: string): Uint224 {
     return new Uint224(val)
   }
-  toBytes28 (): Bytes28 {
+  toBytes (): Bytes28 {
     return new Bytes28(`0x${this.toBN().toString(16, 56)}`)
   }
 }
@@ -1084,7 +1095,7 @@ export class Uint232 extends UintString {
   static from (val: string): Uint232 {
     return new Uint232(val)
   }
-  toBytes29 (): Bytes29 {
+  toBytes (): Bytes29 {
     return new Bytes29(`0x${this.toBN().toString(16, 58)}`)
   }
 }
@@ -1100,7 +1111,7 @@ export class Uint240 extends UintString {
   static from (val: string): Uint240 {
     return new Uint240(val)
   }
-  toBytes30 (): Bytes30 {
+  toBytes (): Bytes30 {
     return new Bytes30(`0x${this.toBN().toString(16, 60)}`)
   }
 }
@@ -1116,7 +1127,7 @@ export class Uint248 extends UintString {
   static from (val: string): Uint248 {
     return new Uint248(val)
   }
-  toBytes31 (): Bytes31 {
+  toBytes (): Bytes31 {
     return new Bytes31(`0x${this.toBN().toString(16, 62)}`)
   }
 }
@@ -1132,7 +1143,7 @@ export class Uint256 extends UintString {
   static from (val: string): Uint256 {
     return new Uint256(val)
   }
-  toBytes32 (): Bytes32 {
+  toBytes (): Bytes32 {
     return new Bytes32(`0x${this.toBN().toString(16, 64)}`)
   }
 }

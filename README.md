@@ -29,9 +29,10 @@ import { Bytes32, Uint256, Uint32, Address } from 'soltypes'
 '0x1111111111111111111111111111111111111111111111111111111111111111'
 // returns 0x string
 
-> hash.toUint256().toString()
+> const n: Uint256 = hash.toUint()
+> n.toString()
 '7719472615821079694904732333912527190217998977709370935963838933860875309329'
-// returns number string
+// returns Uint256 instance
 
 > Uint32.from('11111')
 // OK
@@ -44,7 +45,8 @@ import { Bytes32, Uint256, Uint32, Address } from 'soltypes'
 
 > const uintA = Uint256('1234')
 
-> uintA.toBytes32().toString()
+> const b: Bytes32 = uintA.toBytes()
+> b.toString()
 '0x00000000000000000000000000000000000000000000000000000000000004d2'
 // returns 0x string
 
