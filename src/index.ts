@@ -59,7 +59,7 @@ export class NumString extends DataStr {
       throw Error(`It is not a number. ${val} starts with 0x.`)
     // always remove prefixed zeroes
     const prefix = this.val.startsWith('-') ? '-' : ''
-    while (this.val.startsWith('0')) {
+    while (this.val.startsWith('0') && this.val.length > 1) {
       this.val = this.val.slice(1)
     }
     this.val = prefix + this.val
