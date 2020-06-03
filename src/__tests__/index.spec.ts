@@ -69,21 +69,21 @@ import {
 
 describe('HexString', () => {
   test('Hex string accepts only 0x starting string', () => {
-    expect(() => HexString.from('00')).toThrow()
-    expect(() => new HexString('0x00')).not.toThrow()
+    expect(() => HexString.from('13')).toThrow()
+    expect(() => new HexString('0x13')).not.toThrow()
   })
   test('HexString.toString() returns 0x starting string', () => {
-    expect(HexString.from('0x00').toString()).toBe('0x00')
+    expect(HexString.from('0x13').toString()).toBe('0x13')
   })
 })
 
 describe('NumString', () => {
   test('Num string does not start with 0x', () => {
-    expect(() => NumString.from('0x00')).toThrow()
-    expect(() => new NumString('00')).not.toThrow()
+    expect(() => NumString.from('0x13')).toThrow()
+    expect(() => new NumString('13')).not.toThrow()
   })
   test('NumString.toString() does not start with 0x', () => {
-    expect(NumString.from('00').toString()).toBe('00')
+    expect(NumString.from('13').toString()).toBe('13')
   })
 })
 
@@ -722,8 +722,8 @@ describe('Uint', () => {
       expect(() => Uint8.from('255')).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint8.from('0x00')).toThrow()
-      expect(() => Uint8.from('00')).not.toThrow()
+      expect(() => Uint8.from('0x13')).toThrow()
+      expect(() => Uint8.from('13')).not.toThrow()
     })
     test('can be converted to Byte', () => {
       expect(Uint8.from('1').toByte()).toBeInstanceOf(Byte)
@@ -736,8 +736,8 @@ describe('Uint', () => {
       expect(() => Uint16.from('65535')).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint16.from('0x00')).toThrow()
-      expect(() => Uint16.from('00')).not.toThrow()
+      expect(() => Uint16.from('0x13')).toThrow()
+      expect(() => Uint16.from('13')).not.toThrow()
     })
     test('can be converted to Bytes2', () => {
       expect(Uint16.from('12').toBytes()).toBeInstanceOf(Bytes2)
@@ -750,8 +750,8 @@ describe('Uint', () => {
       expect(() => Uint24.from('16777215')).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint24.from('0x00')).toThrow()
-      expect(() => Uint24.from('00')).not.toThrow()
+      expect(() => Uint24.from('0x13')).toThrow()
+      expect(() => Uint24.from('13')).not.toThrow()
     })
     test('can be converted to Bytes3', () => {
       expect(Uint24.from('255').toBytes()).toBeInstanceOf(Bytes3)
@@ -764,8 +764,8 @@ describe('Uint', () => {
       expect(() => Uint32.from('4294967295')).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint32.from('0x00')).toThrow()
-      expect(() => Uint32.from('00')).not.toThrow()
+      expect(() => Uint32.from('0x13')).toThrow()
+      expect(() => Uint32.from('13')).not.toThrow()
     })
     test('can be converted to Bytes4', () => {
       expect(Uint32.from('65535').toBytes()).toBeInstanceOf(Bytes4)
@@ -778,8 +778,8 @@ describe('Uint', () => {
       expect(() => Uint40.from('1099511627775')).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint40.from('0x00')).toThrow()
-      expect(() => Uint40.from('00')).not.toThrow()
+      expect(() => Uint40.from('0x13')).toThrow()
+      expect(() => Uint40.from('13')).not.toThrow()
     })
     test('can be converted to Bytes5', () => {
       expect(Uint40.from('16777215').toBytes()).toBeInstanceOf(Bytes5)
@@ -792,8 +792,8 @@ describe('Uint', () => {
       expect(() => Uint48.from('281474976710655')).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint48.from('0x00')).toThrow()
-      expect(() => Uint48.from('00')).not.toThrow()
+      expect(() => Uint48.from('0x13')).toThrow()
+      expect(() => Uint48.from('13')).not.toThrow()
     })
     test('can be converted to Bytes6', () => {
       expect(Uint48.from('4294967295').toBytes()).toBeInstanceOf(Bytes6)
@@ -806,8 +806,8 @@ describe('Uint', () => {
       expect(() => Uint56.from('72057594037927935')).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint56.from('0x00')).toThrow()
-      expect(() => Uint56.from('00')).not.toThrow()
+      expect(() => Uint56.from('0x13')).toThrow()
+      expect(() => Uint56.from('13')).not.toThrow()
     })
     test('can be converted to Bytes7', () => {
       expect(Uint56.from('1099511627775').toBytes()).toBeInstanceOf(Bytes7)
@@ -820,8 +820,8 @@ describe('Uint', () => {
       expect(() => Uint64.from('18446744073709551615')).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint64.from('0x00')).toThrow()
-      expect(() => Uint64.from('00')).not.toThrow()
+      expect(() => Uint64.from('0x13')).toThrow()
+      expect(() => Uint64.from('13')).not.toThrow()
     })
     test('can be converted to Bytes8', () => {
       expect(Uint64.from('281474976710655').toBytes()).toBeInstanceOf(Bytes8)
@@ -834,8 +834,8 @@ describe('Uint', () => {
       expect(() => Uint72.from('4722366482869645213695')).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint72.from('0x00')).toThrow()
-      expect(() => Uint72.from('00')).not.toThrow()
+      expect(() => Uint72.from('0x13')).toThrow()
+      expect(() => Uint72.from('13')).not.toThrow()
     })
     test('can be converted to Bytes9', () => {
       expect(Uint72.from('72057594037927935').toBytes()).toBeInstanceOf(Bytes9)
@@ -848,8 +848,8 @@ describe('Uint', () => {
       expect(() => Uint80.from('1208925819614629174706175')).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint80.from('0x00')).toThrow()
-      expect(() => Uint80.from('00')).not.toThrow()
+      expect(() => Uint80.from('0x13')).toThrow()
+      expect(() => Uint80.from('13')).not.toThrow()
     })
     test('can be converted to Bytes10', () => {
       expect(Uint80.from('18446744073709551615').toBytes()).toBeInstanceOf(
@@ -864,8 +864,8 @@ describe('Uint', () => {
       expect(() => Uint88.from('309485009821345068724781055')).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint88.from('0x00')).toThrow()
-      expect(() => Uint88.from('00')).not.toThrow()
+      expect(() => Uint88.from('0x13')).toThrow()
+      expect(() => Uint88.from('13')).not.toThrow()
     })
     test('can be converted to Bytes11', () => {
       expect(Uint88.from('4722366482869645213695').toBytes()).toBeInstanceOf(
@@ -880,8 +880,8 @@ describe('Uint', () => {
       expect(() => Uint96.from('79228162514264337593543950335')).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint96.from('0x00')).toThrow()
-      expect(() => Uint96.from('00')).not.toThrow()
+      expect(() => Uint96.from('0x13')).toThrow()
+      expect(() => Uint96.from('13')).not.toThrow()
     })
     test('can be converted to Bytes12', () => {
       expect(Uint96.from('1208925819614629174706175').toBytes()).toBeInstanceOf(
@@ -898,8 +898,8 @@ describe('Uint', () => {
       ).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint104.from('0x00')).toThrow()
-      expect(() => Uint104.from('00')).not.toThrow()
+      expect(() => Uint104.from('0x13')).toThrow()
+      expect(() => Uint104.from('13')).not.toThrow()
     })
     test('can be converted to Bytes13', () => {
       expect(
@@ -916,8 +916,8 @@ describe('Uint', () => {
       ).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint112.from('0x00')).toThrow()
-      expect(() => Uint112.from('00')).not.toThrow()
+      expect(() => Uint112.from('0x13')).toThrow()
+      expect(() => Uint112.from('13')).not.toThrow()
     })
     test('can be converted to Bytes14', () => {
       expect(
@@ -936,8 +936,8 @@ describe('Uint', () => {
       ).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint120.from('0x00')).toThrow()
-      expect(() => Uint120.from('00')).not.toThrow()
+      expect(() => Uint120.from('0x13')).toThrow()
+      expect(() => Uint120.from('13')).not.toThrow()
     })
     test('can be converted to Bytes15', () => {
       expect(
@@ -956,8 +956,8 @@ describe('Uint', () => {
       ).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint128.from('0x00')).toThrow()
-      expect(() => Uint128.from('00')).not.toThrow()
+      expect(() => Uint128.from('0x13')).toThrow()
+      expect(() => Uint128.from('13')).not.toThrow()
     })
     test('can be converted to Bytes16', () => {
       expect(
@@ -976,8 +976,8 @@ describe('Uint', () => {
       ).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint136.from('0x00')).toThrow()
-      expect(() => Uint136.from('00')).not.toThrow()
+      expect(() => Uint136.from('0x13')).toThrow()
+      expect(() => Uint136.from('13')).not.toThrow()
     })
     test('can be converted to Bytes17', () => {
       expect(
@@ -996,8 +996,8 @@ describe('Uint', () => {
       ).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint144.from('0x00')).toThrow()
-      expect(() => Uint144.from('00')).not.toThrow()
+      expect(() => Uint144.from('0x13')).toThrow()
+      expect(() => Uint144.from('13')).not.toThrow()
     })
     test('can be converted to Bytes18', () => {
       expect(
@@ -1016,8 +1016,8 @@ describe('Uint', () => {
       ).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint152.from('0x00')).toThrow()
-      expect(() => Uint152.from('00')).not.toThrow()
+      expect(() => Uint152.from('0x13')).toThrow()
+      expect(() => Uint152.from('13')).not.toThrow()
     })
     test('can be converted to Bytes19', () => {
       expect(
@@ -1036,8 +1036,8 @@ describe('Uint', () => {
       ).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint160.from('0x00')).toThrow()
-      expect(() => Uint160.from('00')).not.toThrow()
+      expect(() => Uint160.from('0x13')).toThrow()
+      expect(() => Uint160.from('13')).not.toThrow()
     })
     test('can be converted to Bytes20', () => {
       expect(
@@ -1056,8 +1056,8 @@ describe('Uint', () => {
       ).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint168.from('0x00')).toThrow()
-      expect(() => Uint168.from('00')).not.toThrow()
+      expect(() => Uint168.from('0x13')).toThrow()
+      expect(() => Uint168.from('13')).not.toThrow()
     })
     test('can be converted to Bytes21', () => {
       expect(
@@ -1076,8 +1076,8 @@ describe('Uint', () => {
       ).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint176.from('0x00')).toThrow()
-      expect(() => Uint176.from('00')).not.toThrow()
+      expect(() => Uint176.from('0x13')).toThrow()
+      expect(() => Uint176.from('13')).not.toThrow()
     })
     test('can be converted to Bytes22', () => {
       expect(
@@ -1098,8 +1098,8 @@ describe('Uint', () => {
       ).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint184.from('0x00')).toThrow()
-      expect(() => Uint184.from('00')).not.toThrow()
+      expect(() => Uint184.from('0x13')).toThrow()
+      expect(() => Uint184.from('13')).not.toThrow()
     })
     test('can be converted to Bytes23', () => {
       expect(
@@ -1124,8 +1124,8 @@ describe('Uint', () => {
       ).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint192.from('0x00')).toThrow()
-      expect(() => Uint192.from('00')).not.toThrow()
+      expect(() => Uint192.from('0x13')).toThrow()
+      expect(() => Uint192.from('13')).not.toThrow()
     })
     test('can be converted to Bytes24', () => {
       expect(
@@ -1150,8 +1150,8 @@ describe('Uint', () => {
       ).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint200.from('0x00')).toThrow()
-      expect(() => Uint200.from('00')).not.toThrow()
+      expect(() => Uint200.from('0x13')).toThrow()
+      expect(() => Uint200.from('13')).not.toThrow()
     })
     test('can be converted to Bytes25', () => {
       expect(
@@ -1176,8 +1176,8 @@ describe('Uint', () => {
       ).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint208.from('0x00')).toThrow()
-      expect(() => Uint208.from('00')).not.toThrow()
+      expect(() => Uint208.from('0x13')).toThrow()
+      expect(() => Uint208.from('13')).not.toThrow()
     })
     test('can be converted to Bytes26', () => {
       expect(
@@ -1202,8 +1202,8 @@ describe('Uint', () => {
       ).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint216.from('0x00')).toThrow()
-      expect(() => Uint216.from('00')).not.toThrow()
+      expect(() => Uint216.from('0x13')).toThrow()
+      expect(() => Uint216.from('13')).not.toThrow()
     })
     test('can be converted to Bytes27', () => {
       expect(
@@ -1228,8 +1228,8 @@ describe('Uint', () => {
       ).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint224.from('0x00')).toThrow()
-      expect(() => Uint224.from('00')).not.toThrow()
+      expect(() => Uint224.from('0x13')).toThrow()
+      expect(() => Uint224.from('13')).not.toThrow()
     })
     test('can be converted to Bytes28', () => {
       expect(
@@ -1254,8 +1254,8 @@ describe('Uint', () => {
       ).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint232.from('0x00')).toThrow()
-      expect(() => Uint232.from('00')).not.toThrow()
+      expect(() => Uint232.from('0x13')).toThrow()
+      expect(() => Uint232.from('13')).not.toThrow()
     })
     test('can be converted to Bytes29', () => {
       expect(
@@ -1280,8 +1280,8 @@ describe('Uint', () => {
       ).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint240.from('0x00')).toThrow()
-      expect(() => Uint240.from('00')).not.toThrow()
+      expect(() => Uint240.from('0x13')).toThrow()
+      expect(() => Uint240.from('13')).not.toThrow()
     })
     test('can be converted to Bytes30', () => {
       expect(
@@ -1306,8 +1306,8 @@ describe('Uint', () => {
       ).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint248.from('0x00')).toThrow()
-      expect(() => Uint248.from('00')).not.toThrow()
+      expect(() => Uint248.from('0x13')).toThrow()
+      expect(() => Uint248.from('13')).not.toThrow()
     })
     test('can be converted to Bytes31', () => {
       expect(
@@ -1332,8 +1332,8 @@ describe('Uint', () => {
       ).not.toThrow()
     })
     test('only accepts non-0x string', () => {
-      expect(() => Uint256.from('0x00')).toThrow()
-      expect(() => Uint256.from('00')).not.toThrow()
+      expect(() => Uint256.from('0x13')).toThrow()
+      expect(() => Uint256.from('13')).not.toThrow()
     })
     test('can be converted to Bytes32', () => {
       expect(

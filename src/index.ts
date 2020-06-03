@@ -20,7 +20,6 @@ abstract class DataStr {
 
 export class HexString extends DataStr {
   isHex = true
-  val: string
   constructor (val: string) {
     super(val)
     if (!this.val.startsWith('0x'))
@@ -54,11 +53,16 @@ export class HexString extends DataStr {
 
 export class NumString extends DataStr {
   isNum = true
-  val: string
   constructor (val: string) {
     super(val)
-    if (this.val.startsWith('0x'))
+    if (val.startsWith('0x'))
       throw Error(`It is not a number. ${val} starts with 0x.`)
+    // always remove prefixed zeroes
+    const prefix = this.val.startsWith('-') ? '-' : ''
+    while (this.val.startsWith('0')) {
+      this.val = this.val.slice(1)
+    }
+    this.val = prefix + this.val
   }
 
   static from (val: string): NumString {
