@@ -35,7 +35,12 @@ export class HexString extends DataStr {
   }
 
   protected assertLength (len: number) {
-    if (this.byteLength() !== len) throw `It has ${this.byteLength()} bytes`
+    const leftPadding = len * 2 - (this.val.length - 2)
+    if (leftPadding < 0) throw `It has ${this.byteLength()} bytes`
+    else if (leftPadding > 0) {
+      const newVal = `0x${Array(leftPadding).fill('0').join('')}${this.val.slice(2)}`
+      this.val = newVal
+    }
   }
 
   static from (val: string): HexString {
