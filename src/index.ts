@@ -24,6 +24,9 @@ export class HexString extends DataStr {
     super(val)
     if (!this.val.startsWith('0x'))
       throw Error(`Invalid value. ${val} does not start with 0x`)
+    if (this.val.length % 2 !== 0) {
+      this.val = `0x0${this.val.substr(2)}`
+    }
   }
 
   toBN (): BN {
