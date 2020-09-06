@@ -64,7 +64,8 @@ import {
   Uint232,
   Uint240,
   Uint248,
-  Uint256
+  Uint256,
+  Address
 } from '../index'
 
 describe('HexString', () => {
@@ -463,6 +464,11 @@ describe('Bytes', () => {
     test('can convert to Uint160', () => {
       expect(
         Bytes20.from('0x1212121212121212121212121212121212121212').toUint()
+      ).toBeDefined()
+    })
+    test('can convert to Address', () => {
+      expect(
+        Bytes20.from('0x1212121212121212121212121212121212121212').toAddress()
       ).toBeDefined()
     })
   })
@@ -1445,3 +1451,16 @@ describe('Uint', () => {
     })
   })
 })
+
+describe("Address", () => {
+  test("Convert string to EIP-55 checksum string", () => {
+    expect(
+      Address.from("0xab12cd12ef12ab12121212121212121212121212").toString()
+    ).toStrictEqual("0xAB12cD12Ef12aB12121212121212121212121212");
+  });
+  test("does not accept non-0x string", () => {
+    expect(() =>
+      Bytes20.from("1212121212121212121212121212121212121212").toUint()
+    ).toThrow();
+  });
+});
