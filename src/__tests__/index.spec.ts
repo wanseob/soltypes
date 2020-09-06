@@ -154,9 +154,8 @@ describe('Bytes', () => {
   })
 
   test('should fill left padding zeroes', () => {
-      expect(Bytes4.from('0x0').toString()).toBe('0x00000000')
-    })
-
+    expect(Bytes4.from('0x0').toString()).toBe('0x00000000')
+  })
 
   describe('Bytes5', () => {
     test('only accept 5 bytes hex string', () => {
@@ -297,7 +296,9 @@ describe('Bytes', () => {
       ).toThrow()
     })
     test('should fill left padding zeroes', () => {
-      expect(Bytes13.from('0x0').toString()).toBe('0x00000000000000000000000000')
+      expect(Bytes13.from('0x0').toString()).toBe(
+        '0x00000000000000000000000000'
+      )
     })
     test('can convert to Uint104', () => {
       expect(
@@ -317,7 +318,9 @@ describe('Bytes', () => {
       ).toThrow()
     })
     test('should fill left padding zeroes', () => {
-      expect(Bytes14.from('0x0').toString()).toBe('0x0000000000000000000000000000')
+      expect(Bytes14.from('0x0').toString()).toBe(
+        '0x0000000000000000000000000000'
+      )
     })
     test('can convert to Uint112', () => {
       expect(
@@ -339,7 +342,9 @@ describe('Bytes', () => {
       ).toThrow()
     })
     test('should fill left padding zeroes', () => {
-      expect(Bytes15.from('0x0').toString()).toBe('0x000000000000000000000000000000')
+      expect(Bytes15.from('0x0').toString()).toBe(
+        '0x000000000000000000000000000000'
+      )
     })
     test('can convert to Uint120', () => {
       expect(
@@ -363,7 +368,9 @@ describe('Bytes', () => {
       ).toThrow()
     })
     test('should fill left padding zeroes', () => {
-      expect(Bytes16.from('0x0').toString()).toBe('0x00000000000000000000000000000000')
+      expect(Bytes16.from('0x0').toString()).toBe(
+        '0x00000000000000000000000000000000'
+      )
     })
     test('can convert to Uint128', () => {
       expect(
@@ -387,7 +394,9 @@ describe('Bytes', () => {
       ).toThrow()
     })
     test('should fill left padding zeroes', () => {
-      expect(Bytes17.from('0x0').toString()).toBe('0x0000000000000000000000000000000000')
+      expect(Bytes17.from('0x0').toString()).toBe(
+        '0x0000000000000000000000000000000000'
+      )
     })
     test('can convert to Uint136', () => {
       expect(
@@ -411,7 +420,9 @@ describe('Bytes', () => {
       ).toThrow()
     })
     test('should fill left padding zeroes', () => {
-      expect(Bytes18.from('0x0').toString()).toBe('0x000000000000000000000000000000000000')
+      expect(Bytes18.from('0x0').toString()).toBe(
+        '0x000000000000000000000000000000000000'
+      )
     })
     test('can convert to Uint144', () => {
       expect(
@@ -435,7 +446,9 @@ describe('Bytes', () => {
       ).toThrow()
     })
     test('should fill left padding zeroes', () => {
-      expect(Bytes19.from('0x0').toString()).toBe('0x00000000000000000000000000000000000000')
+      expect(Bytes19.from('0x0').toString()).toBe(
+        '0x00000000000000000000000000000000000000'
+      )
     })
     test('can convert to Uint152', () => {
       expect(
@@ -459,7 +472,9 @@ describe('Bytes', () => {
       ).toThrow()
     })
     test('should fill left padding zeroes', () => {
-      expect(Bytes20.from('0x0').toString()).toBe('0x0000000000000000000000000000000000000000')
+      expect(Bytes20.from('0x0').toString()).toBe(
+        '0x0000000000000000000000000000000000000000'
+      )
     })
     test('can convert to Uint160', () => {
       expect(
@@ -488,7 +503,9 @@ describe('Bytes', () => {
       ).toThrow()
     })
     test('should fill left padding zeroes', () => {
-      expect(Bytes21.from('0x0').toString()).toBe('0x000000000000000000000000000000000000000000')
+      expect(Bytes21.from('0x0').toString()).toBe(
+        '0x000000000000000000000000000000000000000000'
+      )
     })
     test('can convert to Uint168', () => {
       expect(
@@ -512,7 +529,9 @@ describe('Bytes', () => {
       ).toThrow()
     })
     test('should fill left padding zeroes', () => {
-      expect(Bytes22.from('0x0').toString()).toBe('0x00000000000000000000000000000000000000000000')
+      expect(Bytes22.from('0x0').toString()).toBe(
+        '0x00000000000000000000000000000000000000000000'
+      )
     })
     test('can convert to Uint176', () => {
       expect(
@@ -536,7 +555,9 @@ describe('Bytes', () => {
       ).toThrow()
     })
     test('should fill left padding zeroes', () => {
-      expect(Bytes23.from('0x0').toString()).toBe('0x0000000000000000000000000000000000000000000000')
+      expect(Bytes23.from('0x0').toString()).toBe(
+        '0x0000000000000000000000000000000000000000000000'
+      )
     })
     test('can convert to Uint184', () => {
       expect(
@@ -564,7 +585,9 @@ describe('Bytes', () => {
       ).toThrow()
     })
     test('should fill left padding zeroes', () => {
-      expect(Bytes24.from('0x0').toString()).toBe('0x000000000000000000000000000000000000000000000000')
+      expect(Bytes24.from('0x0').toString()).toBe(
+        '0x000000000000000000000000000000000000000000000000'
+      )
     })
     test('can convert to Uint192', () => {
       expect(
@@ -592,7 +615,9 @@ describe('Bytes', () => {
       ).toThrow()
     })
     test('should fill left padding zeroes', () => {
-      expect(Bytes25.from('0x0').toString()).toBe('0x00000000000000000000000000000000000000000000000000')
+      expect(Bytes25.from('0x0').toString()).toBe(
+        '0x00000000000000000000000000000000000000000000000000'
+      )
     })
     test('can convert to Uint200', () => {
       expect(
@@ -620,7 +645,9 @@ describe('Bytes', () => {
       ).toThrow()
     })
     test('should fill left padding zeroes', () => {
-      expect(Bytes26.from('0x0').toString()).toBe('0x0000000000000000000000000000000000000000000000000000')
+      expect(Bytes26.from('0x0').toString()).toBe(
+        '0x0000000000000000000000000000000000000000000000000000'
+      )
     })
     test('can convert to Uint208', () => {
       expect(
@@ -650,7 +677,9 @@ describe('Bytes', () => {
       ).toThrow()
     })
     test('should fill left padding zeroes', () => {
-      expect(Bytes27.from('0x0').toString()).toBe('0x000000000000000000000000000000000000000000000000000000')
+      expect(Bytes27.from('0x0').toString()).toBe(
+        '0x000000000000000000000000000000000000000000000000000000'
+      )
     })
     test('can convert to Uint216', () => {
       expect(
@@ -682,7 +711,9 @@ describe('Bytes', () => {
       ).toThrow()
     })
     test('should fill left padding zeroes', () => {
-      expect(Bytes28.from('0x0').toString()).toBe('0x00000000000000000000000000000000000000000000000000000000')
+      expect(Bytes28.from('0x0').toString()).toBe(
+        '0x00000000000000000000000000000000000000000000000000000000'
+      )
     })
     test('can convert to Uint224', () => {
       expect(
@@ -714,7 +745,9 @@ describe('Bytes', () => {
       ).toThrow()
     })
     test('should fill left padding zeroes', () => {
-      expect(Bytes29.from('0x0').toString()).toBe('0x0000000000000000000000000000000000000000000000000000000000')
+      expect(Bytes29.from('0x0').toString()).toBe(
+        '0x0000000000000000000000000000000000000000000000000000000000'
+      )
     })
     test('can convert to Uint232', () => {
       expect(
@@ -746,7 +779,9 @@ describe('Bytes', () => {
       ).toThrow()
     })
     test('should fill left padding zeroes', () => {
-      expect(Bytes30.from('0x0').toString()).toBe('0x000000000000000000000000000000000000000000000000000000000000')
+      expect(Bytes30.from('0x0').toString()).toBe(
+        '0x000000000000000000000000000000000000000000000000000000000000'
+      )
     })
     test('can convert to Uint240', () => {
       expect(
@@ -778,7 +813,9 @@ describe('Bytes', () => {
       ).toThrow()
     })
     test('should fill left padding zeroes', () => {
-      expect(Bytes31.from('0x0').toString()).toBe('0x00000000000000000000000000000000000000000000000000000000000000')
+      expect(Bytes31.from('0x0').toString()).toBe(
+        '0x00000000000000000000000000000000000000000000000000000000000000'
+      )
     })
     test('can convert to Uint248', () => {
       expect(
@@ -810,7 +847,9 @@ describe('Bytes', () => {
       ).toThrow()
     })
     test('should fill left padding zeroes', () => {
-      expect(Bytes32.from('0x0').toString()).toBe('0x0000000000000000000000000000000000000000000000000000000000000000')
+      expect(Bytes32.from('0x0').toString()).toBe(
+        '0x0000000000000000000000000000000000000000000000000000000000000000'
+      )
     })
     test('can convert to Uint256', () => {
       expect(
@@ -1452,15 +1491,15 @@ describe('Uint', () => {
   })
 })
 
-describe("Address", () => {
-  test("Convert string to EIP-55 checksum string", () => {
+describe('Address', () => {
+  test('Convert string to EIP-55 checksum string', () => {
     expect(
-      Address.from("0xab12cd12ef12ab12121212121212121212121212").toString()
-    ).toStrictEqual("0xAB12cD12Ef12aB12121212121212121212121212");
-  });
-  test("does not accept non-0x string", () => {
+      Address.from('0xab12cd12ef12ab12121212121212121212121212').toString()
+    ).toStrictEqual('0xAB12cD12Ef12aB12121212121212121212121212')
+  })
+  test('does not accept non-0x string', () => {
     expect(() =>
-      Bytes20.from("1212121212121212121212121212121212121212").toUint()
-    ).toThrow();
-  });
-});
+      Bytes20.from('1212121212121212121212121212121212121212').toUint()
+    ).toThrow()
+  })
+})

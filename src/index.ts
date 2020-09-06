@@ -42,7 +42,9 @@ export class HexString extends DataStr {
     const leftPadding = len * 2 - (this.val.length - 2)
     if (leftPadding < 0) throw `It has ${this.byteLength()} bytes`
     else if (leftPadding > 0) {
-      const newVal = `0x${Array(leftPadding).fill('0').join('')}${this.val.slice(2)}`
+      const newVal = `0x${Array(leftPadding)
+        .fill('0')
+        .join('')}${this.val.slice(2)}`
       this.val = newVal
     }
   }
@@ -485,7 +487,7 @@ export class Bytes20 extends HexString {
     return new Uint160(this.toBN().toString(10))
   }
 
-  toAddress(): Address {
+  toAddress (): Address {
     return new Address(this.val)
   }
 }
@@ -1554,9 +1556,11 @@ export class Address extends Bytes20 {
    * https://github.com/ethereum/EIPs/blob/master/EIPS/eip-55.md#implementation
    * @param address Ethereum 20 bytes address value
    */
-  static toChecksumAddress(address: string) {
+  static toChecksumAddress (address: string) {
     address = address.toLowerCase().replace('0x', '')
-    const hash = createKeccakHash('keccak256').update(address).digest('hex')
+    const hash = createKeccakHash('keccak256')
+      .update(address)
+      .digest('hex')
     let ret = '0x'
     for (let i = 0; i < address.length; i += 1) {
       if (parseInt(hash[i], 16) >= 8) {
