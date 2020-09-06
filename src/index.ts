@@ -484,6 +484,10 @@ export class Bytes20 extends HexString {
   toUint (): Uint160 {
     return new Uint160(this.toBN().toString(10))
   }
+
+  toAddress(): Address {
+    return new Address(this.val)
+  }
 }
 
 export class Bytes21 extends HexString {
@@ -1539,6 +1543,10 @@ export class Address extends Bytes20 {
   constructor (val: string) {
     super(val)
     this.val = Address.toChecksumAddress(val)
+  }
+
+  static from (val: string): Address {
+    return new Address(val)
   }
 
   /**
