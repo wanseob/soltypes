@@ -1,5 +1,5 @@
 import BN from 'bn.js'
-import createKeccakHash from 'keccak'
+import sha3 from 'js-sha3'
 
 abstract class DataStr {
   val: string
@@ -1558,9 +1558,9 @@ export class Address extends Bytes20 {
    */
   static toChecksumAddress (address: string) {
     address = address.toLowerCase().replace('0x', '')
-    const hash = createKeccakHash('keccak256')
+    const hash = sha3.keccak256
       .update(address)
-      .digest('hex')
+      .hex()
     let ret = '0x'
     for (let i = 0; i < address.length; i += 1) {
       if (parseInt(hash[i], 16) >= 8) {
