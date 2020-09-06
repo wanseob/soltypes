@@ -1,4 +1,5 @@
 import BN from 'bn.js'
+import createKeccakHash from 'keccak'
 
 abstract class DataStr {
   val: string
@@ -1534,4 +1535,28 @@ export class Int256 extends IntString {
   }
 }
 
-export class Address extends Bytes20 {}
+export class Address extends Bytes20 {
+  constructor (val: string) {
+    super(val)
+    this.val = Address.toChecksumAddress(val)
+  }
+
+  /**
+   * @dev Check EIP-55 for the details
+   * https://github.com/ethereum/EIPs/blob/master/EIPS/eip-55.md#implementation
+   * @param address Ethereum 20 bytes address value
+   */
+  static toChecksumAddress(address: string) {
+    address = address.toLowerCase().replace('0x', '')
+    const hash = createKeccakHash('keccak256').update(address).digest('hex')
+    let ret = '0x'
+    for (let i = 0; i < address.length; i += 1) {
+      if (parseInt(hash[i], 16) >= 8) {
+        ret += address[i].toUpperCase()
+      } else {
+        ret += address[i]
+      }
+    }
+    return ret
+  }
+}
