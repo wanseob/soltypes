@@ -12,6 +12,10 @@ abstract class DataStr {
     return this.val
   }
 
+  toJSON () {
+    return this.toString()
+  }
+
   eq (n: DataStr): boolean {
     return this.toBN().eq(n.toBN())
   }
