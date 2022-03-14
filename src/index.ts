@@ -1,4 +1,4 @@
-import BN from 'bn.js'
+import { BigNumber }from '@ethersproject/bignumber'
 import sha3 from 'js-sha3'
 
 abstract class DataStr {
@@ -17,10 +17,10 @@ abstract class DataStr {
   }
 
   eq (n: DataStr): boolean {
-    return this.toBN().eq(n.toBN())
+    return this.toBigNumber().eq(n.toBigNumber())
   }
 
-  abstract toBN (): BN
+  abstract toBigNumber (): BigNumber
 }
 
 export class HexString extends DataStr {
@@ -30,12 +30,12 @@ export class HexString extends DataStr {
     if (!this.val.startsWith('0x'))
       throw Error(`Invalid value. ${val} does not start with 0x`)
     if (this.val.length % 2 !== 0) {
-      this.val = `0x0${this.val.substr(2)}`
+      this.val = `0x0${this.val.substring(2)}`
     }
   }
 
-  toBN (): BN {
-    return new BN(this.val.slice(2), 'hex')
+  toBigNumber (): BigNumber {
+    return BigNumber.from(this.val)
   }
 
   byteLength () {
@@ -58,7 +58,7 @@ export class HexString extends DataStr {
   }
 
   toUintString (): UintString {
-    return new UintString(this.toBN().toString(10))
+    return new UintString(this.toBigNumber().toString())
   }
 
   toBuffer (): Buffer {
@@ -84,12 +84,12 @@ export class NumString extends DataStr {
     return new NumString(val)
   }
 
-  toBN (): BN {
-    return new BN(this.val, 10)
+  toBigNumber (): BigNumber {
+    return BigNumber.from(this.val)
   }
 
   toBytes (): HexString {
-    return new HexString(`0x${this.toBN().toString(16)}`)
+    return new HexString(`0x${this.toBigNumber().toHexString()}`)
   }
 
   toBuffer (): Buffer {
@@ -119,7 +119,7 @@ export class UintString extends NumString {
   }
 
   toHexString (): HexString {
-    return new HexString(`0x${this.toBN().toString(16)}`)
+    return new HexString(`0x${this.toBigNumber().toHexString()}`)
   }
 }
 
@@ -165,7 +165,7 @@ export class Byte extends HexString {
   }
 
   toUint (): Uint8 {
-    return new Uint8(this.toBN().toString(10))
+    return new Uint8(this.toBigNumber().toString())
   }
 }
 
@@ -182,7 +182,7 @@ export class Bytes2 extends HexString {
   }
 
   toUint (): Uint16 {
-    return new Uint16(this.toBN().toString(10))
+    return new Uint16(this.toBigNumber().toString())
   }
 }
 
@@ -199,7 +199,7 @@ export class Bytes3 extends HexString {
   }
 
   toUint (): Uint24 {
-    return new Uint24(this.toBN().toString(10))
+    return new Uint24(this.toBigNumber().toString())
   }
 }
 
@@ -216,7 +216,7 @@ export class Bytes4 extends HexString {
   }
 
   toUint (): Uint32 {
-    return new Uint32(this.toBN().toString(10))
+    return new Uint32(this.toBigNumber().toString())
   }
 }
 
@@ -233,7 +233,7 @@ export class Bytes5 extends HexString {
   }
 
   toUint (): Uint40 {
-    return new Uint40(this.toBN().toString(10))
+    return new Uint40(this.toBigNumber().toString())
   }
 }
 
@@ -250,7 +250,7 @@ export class Bytes6 extends HexString {
   }
 
   toUint (): Uint48 {
-    return new Uint48(this.toBN().toString(10))
+    return new Uint48(this.toBigNumber().toString())
   }
 }
 
@@ -267,7 +267,7 @@ export class Bytes7 extends HexString {
   }
 
   toUint (): Uint56 {
-    return new Uint56(this.toBN().toString(10))
+    return new Uint56(this.toBigNumber().toString())
   }
 }
 
@@ -284,7 +284,7 @@ export class Bytes8 extends HexString {
   }
 
   toUint (): Uint64 {
-    return new Uint64(this.toBN().toString(10))
+    return new Uint64(this.toBigNumber().toString())
   }
 }
 
@@ -301,7 +301,7 @@ export class Bytes9 extends HexString {
   }
 
   toUint (): Uint72 {
-    return new Uint72(this.toBN().toString(10))
+    return new Uint72(this.toBigNumber().toString())
   }
 }
 
@@ -318,7 +318,7 @@ export class Bytes10 extends HexString {
   }
 
   toUint (): Uint80 {
-    return new Uint80(this.toBN().toString(10))
+    return new Uint80(this.toBigNumber().toString())
   }
 }
 
@@ -335,7 +335,7 @@ export class Bytes11 extends HexString {
   }
 
   toUint (): Uint88 {
-    return new Uint88(this.toBN().toString(10))
+    return new Uint88(this.toBigNumber().toString())
   }
 }
 
@@ -352,7 +352,7 @@ export class Bytes12 extends HexString {
   }
 
   toUint (): Uint96 {
-    return new Uint96(this.toBN().toString(10))
+    return new Uint96(this.toBigNumber().toString())
   }
 }
 
@@ -369,7 +369,7 @@ export class Bytes13 extends HexString {
   }
 
   toUint (): Uint104 {
-    return new Uint104(this.toBN().toString(10))
+    return new Uint104(this.toBigNumber().toString())
   }
 }
 
@@ -386,7 +386,7 @@ export class Bytes14 extends HexString {
   }
 
   toUint (): Uint112 {
-    return new Uint112(this.toBN().toString(10))
+    return new Uint112(this.toBigNumber().toString())
   }
 }
 
@@ -403,7 +403,7 @@ export class Bytes15 extends HexString {
   }
 
   toUint (): Uint120 {
-    return new Uint120(this.toBN().toString(10))
+    return new Uint120(this.toBigNumber().toString())
   }
 }
 
@@ -420,7 +420,7 @@ export class Bytes16 extends HexString {
   }
 
   toUint (): Uint128 {
-    return new Uint128(this.toBN().toString(10))
+    return new Uint128(this.toBigNumber().toString())
   }
 }
 
@@ -437,7 +437,7 @@ export class Bytes17 extends HexString {
   }
 
   toUint (): Uint136 {
-    return new Uint136(this.toBN().toString(10))
+    return new Uint136(this.toBigNumber().toString())
   }
 }
 
@@ -454,7 +454,7 @@ export class Bytes18 extends HexString {
   }
 
   toUint (): Uint144 {
-    return new Uint144(this.toBN().toString(10))
+    return new Uint144(this.toBigNumber().toString())
   }
 }
 
@@ -471,7 +471,7 @@ export class Bytes19 extends HexString {
   }
 
   toUint (): Uint152 {
-    return new Uint152(this.toBN().toString(10))
+    return new Uint152(this.toBigNumber().toString())
   }
 }
 
@@ -488,7 +488,7 @@ export class Bytes20 extends HexString {
   }
 
   toUint (): Uint160 {
-    return new Uint160(this.toBN().toString(10))
+    return new Uint160(this.toBigNumber().toString())
   }
 
   toAddress (): Address {
@@ -509,7 +509,7 @@ export class Bytes21 extends HexString {
   }
 
   toUint (): Uint168 {
-    return new Uint168(this.toBN().toString(10))
+    return new Uint168(this.toBigNumber().toString())
   }
 }
 
@@ -526,7 +526,7 @@ export class Bytes22 extends HexString {
   }
 
   toUint (): Uint176 {
-    return new Uint176(this.toBN().toString(10))
+    return new Uint176(this.toBigNumber().toString())
   }
 }
 
@@ -543,7 +543,7 @@ export class Bytes23 extends HexString {
   }
 
   toUint (): Uint184 {
-    return new Uint184(this.toBN().toString(10))
+    return new Uint184(this.toBigNumber().toString())
   }
 }
 
@@ -560,7 +560,7 @@ export class Bytes24 extends HexString {
   }
 
   toUint (): Uint192 {
-    return new Uint192(this.toBN().toString(10))
+    return new Uint192(this.toBigNumber().toString())
   }
 }
 
@@ -577,7 +577,7 @@ export class Bytes25 extends HexString {
   }
 
   toUint (): Uint200 {
-    return new Uint200(this.toBN().toString(10))
+    return new Uint200(this.toBigNumber().toString())
   }
 }
 
@@ -594,7 +594,7 @@ export class Bytes26 extends HexString {
   }
 
   toUint (): Uint208 {
-    return new Uint208(this.toBN().toString(10))
+    return new Uint208(this.toBigNumber().toString())
   }
 }
 
@@ -611,7 +611,7 @@ export class Bytes27 extends HexString {
   }
 
   toUint (): Uint216 {
-    return new Uint216(this.toBN().toString(10))
+    return new Uint216(this.toBigNumber().toString())
   }
 }
 
@@ -628,7 +628,7 @@ export class Bytes28 extends HexString {
   }
 
   toUint (): Uint224 {
-    return new Uint224(this.toBN().toString(10))
+    return new Uint224(this.toBigNumber().toString())
   }
 }
 
@@ -645,7 +645,7 @@ export class Bytes29 extends HexString {
   }
 
   toUint (): Uint232 {
-    return new Uint232(this.toBN().toString(10))
+    return new Uint232(this.toBigNumber().toString())
   }
 }
 
@@ -662,7 +662,7 @@ export class Bytes30 extends HexString {
   }
 
   toUint (): Uint240 {
-    return new Uint240(this.toBN().toString(10))
+    return new Uint240(this.toBigNumber().toString())
   }
 }
 
@@ -679,7 +679,7 @@ export class Bytes31 extends HexString {
   }
 
   toUint (): Uint248 {
-    return new Uint248(this.toBN().toString(10))
+    return new Uint248(this.toBigNumber().toString())
   }
 }
 
@@ -696,7 +696,7 @@ export class Bytes32 extends HexString {
   }
 
   toUint (): Uint256 {
-    return new Uint256(this.toBN().toString(10))
+    return new Uint256(this.toBigNumber().toString())
   }
 }
 
@@ -710,7 +710,7 @@ export class Uint8 extends UintString {
     return new Uint8(val)
   }
   toByte (): Byte {
-    return new Byte(`0x${this.toBN().toString(16, 2)}`)
+    return new Byte(this.toBigNumber().toHexString())
   }
 }
 
@@ -725,7 +725,7 @@ export class Uint16 extends UintString {
   }
 
   toBytes (): Bytes2 {
-    return new Bytes2(`0x${this.toBN().toString(16, 4)}`)
+    return new Bytes2(this.toBigNumber().toHexString())
   }
 }
 
@@ -739,7 +739,7 @@ export class Uint24 extends UintString {
     return new Uint24(val)
   }
   toBytes (): Bytes3 {
-    return new Bytes3(`0x${this.toBN().toString(16, 6)}`)
+    return new Bytes3(this.toBigNumber().toHexString())
   }
 }
 
@@ -753,7 +753,7 @@ export class Uint32 extends UintString {
     return new Uint32(val)
   }
   toBytes (): Bytes4 {
-    return new Bytes4(`0x${this.toBN().toString(16, 8)}`)
+    return new Bytes4(this.toBigNumber().toHexString())
   }
 }
 
@@ -767,7 +767,7 @@ export class Uint40 extends UintString {
     return new Uint40(val)
   }
   toBytes (): Bytes5 {
-    return new Bytes5(`0x${this.toBN().toString(16, 10)}`)
+    return new Bytes5(this.toBigNumber().toHexString())
   }
 }
 
@@ -781,7 +781,7 @@ export class Uint48 extends UintString {
     return new Uint48(val)
   }
   toBytes (): Bytes6 {
-    return new Bytes6(`0x${this.toBN().toString(16, 12)}`)
+    return new Bytes6(this.toBigNumber().toHexString())
   }
 }
 
@@ -795,7 +795,7 @@ export class Uint56 extends UintString {
     return new Uint56(val)
   }
   toBytes (): Bytes7 {
-    return new Bytes7(`0x${this.toBN().toString(16, 14)}`)
+    return new Bytes7(this.toBigNumber().toHexString())
   }
 }
 
@@ -809,7 +809,7 @@ export class Uint64 extends UintString {
     return new Uint64(val)
   }
   toBytes (): Bytes8 {
-    return new Bytes8(`0x${this.toBN().toString(16, 16)}`)
+    return new Bytes8(this.toBigNumber().toHexString())
   }
 }
 
@@ -823,7 +823,7 @@ export class Uint72 extends UintString {
     return new Uint72(val)
   }
   toBytes (): Bytes9 {
-    return new Bytes9(`0x${this.toBN().toString(16, 18)}`)
+    return new Bytes9(this.toBigNumber().toHexString())
   }
 }
 
@@ -837,7 +837,7 @@ export class Uint80 extends UintString {
     return new Uint80(val)
   }
   toBytes (): Bytes10 {
-    return new Bytes10(`0x${this.toBN().toString(16, 20)}`)
+    return new Bytes10(this.toBigNumber().toHexString())
   }
 }
 
@@ -851,7 +851,7 @@ export class Uint88 extends UintString {
     return new Uint88(val)
   }
   toBytes (): Bytes11 {
-    return new Bytes11(`0x${this.toBN().toString(16, 22)}`)
+    return new Bytes11(this.toBigNumber().toHexString())
   }
 }
 
@@ -865,7 +865,7 @@ export class Uint96 extends UintString {
     return new Uint96(val)
   }
   toBytes (): Bytes12 {
-    return new Bytes12(`0x${this.toBN().toString(16, 24)}`)
+    return new Bytes12(this.toBigNumber().toHexString())
   }
 }
 
@@ -879,7 +879,7 @@ export class Uint104 extends UintString {
     return new Uint104(val)
   }
   toBytes (): Bytes13 {
-    return new Bytes13(`0x${this.toBN().toString(16, 26)}`)
+    return new Bytes13(this.toBigNumber().toHexString())
   }
 }
 
@@ -893,7 +893,7 @@ export class Uint112 extends UintString {
     return new Uint112(val)
   }
   toBytes (): Bytes14 {
-    return new Bytes14(`0x${this.toBN().toString(16, 28)}`)
+    return new Bytes14(this.toBigNumber().toHexString())
   }
 }
 
@@ -907,7 +907,7 @@ export class Uint120 extends UintString {
     return new Uint120(val)
   }
   toBytes (): Bytes15 {
-    return new Bytes15(`0x${this.toBN().toString(16, 30)}`)
+    return new Bytes15(this.toBigNumber().toHexString())
   }
 }
 
@@ -921,7 +921,7 @@ export class Uint128 extends UintString {
     return new Uint128(val)
   }
   toBytes (): Bytes16 {
-    return new Bytes16(`0x${this.toBN().toString(16, 32)}`)
+    return new Bytes16(this.toBigNumber().toHexString())
   }
 }
 
@@ -935,7 +935,7 @@ export class Uint136 extends UintString {
     return new Uint136(val)
   }
   toBytes (): Bytes17 {
-    return new Bytes17(`0x${this.toBN().toString(16, 34)}`)
+    return new Bytes17(this.toBigNumber().toHexString())
   }
 }
 
@@ -949,7 +949,7 @@ export class Uint144 extends UintString {
     return new Uint144(val)
   }
   toBytes (): Bytes18 {
-    return new Bytes18(`0x${this.toBN().toString(16, 36)}`)
+    return new Bytes18(this.toBigNumber().toHexString())
   }
 }
 
@@ -963,7 +963,7 @@ export class Uint152 extends UintString {
     return new Uint152(val)
   }
   toBytes (): Bytes19 {
-    return new Bytes19(`0x${this.toBN().toString(16, 38)}`)
+    return new Bytes19(this.toBigNumber().toHexString())
   }
 }
 
@@ -977,7 +977,7 @@ export class Uint160 extends UintString {
     return new Uint160(val)
   }
   toBytes (): Bytes20 {
-    return new Bytes20(`0x${this.toBN().toString(16, 40)}`)
+    return new Bytes20(this.toBigNumber().toHexString())
   }
 }
 
@@ -991,7 +991,7 @@ export class Uint168 extends UintString {
     return new Uint168(val)
   }
   toBytes (): Bytes21 {
-    return new Bytes21(`0x${this.toBN().toString(16, 42)}`)
+    return new Bytes21(this.toBigNumber().toHexString())
   }
 }
 
@@ -1007,7 +1007,7 @@ export class Uint176 extends UintString {
     return new Uint176(val)
   }
   toBytes (): Bytes22 {
-    return new Bytes22(`0x${this.toBN().toString(16, 44)}`)
+    return new Bytes22(this.toBigNumber().toHexString())
   }
 }
 
@@ -1023,7 +1023,7 @@ export class Uint184 extends UintString {
     return new Uint184(val)
   }
   toBytes (): Bytes23 {
-    return new Bytes23(`0x${this.toBN().toString(16, 46)}`)
+    return new Bytes23(this.toBigNumber().toHexString())
   }
 }
 
@@ -1039,7 +1039,7 @@ export class Uint192 extends UintString {
     return new Uint192(val)
   }
   toBytes (): Bytes24 {
-    return new Bytes24(`0x${this.toBN().toString(16, 48)}`)
+    return new Bytes24(this.toBigNumber().toHexString())
   }
 }
 
@@ -1055,7 +1055,7 @@ export class Uint200 extends UintString {
     return new Uint200(val)
   }
   toBytes (): Bytes25 {
-    return new Bytes25(`0x${this.toBN().toString(16, 50)}`)
+    return new Bytes25(this.toBigNumber().toHexString())
   }
 }
 
@@ -1071,7 +1071,7 @@ export class Uint208 extends UintString {
     return new Uint208(val)
   }
   toBytes (): Bytes26 {
-    return new Bytes26(`0x${this.toBN().toString(16, 52)}`)
+    return new Bytes26(this.toBigNumber().toHexString())
   }
 }
 
@@ -1087,7 +1087,7 @@ export class Uint216 extends UintString {
     return new Uint216(val)
   }
   toBytes (): Bytes27 {
-    return new Bytes27(`0x${this.toBN().toString(16, 54)}`)
+    return new Bytes27(this.toBigNumber().toHexString())
   }
 }
 
@@ -1103,7 +1103,7 @@ export class Uint224 extends UintString {
     return new Uint224(val)
   }
   toBytes (): Bytes28 {
-    return new Bytes28(`0x${this.toBN().toString(16, 56)}`)
+    return new Bytes28(this.toBigNumber().toHexString())
   }
 }
 
@@ -1119,7 +1119,7 @@ export class Uint232 extends UintString {
     return new Uint232(val)
   }
   toBytes (): Bytes29 {
-    return new Bytes29(`0x${this.toBN().toString(16, 58)}`)
+    return new Bytes29(this.toBigNumber().toHexString())
   }
 }
 
@@ -1135,7 +1135,7 @@ export class Uint240 extends UintString {
     return new Uint240(val)
   }
   toBytes (): Bytes30 {
-    return new Bytes30(`0x${this.toBN().toString(16, 60)}`)
+    return new Bytes30(this.toBigNumber().toHexString())
   }
 }
 
@@ -1151,7 +1151,7 @@ export class Uint248 extends UintString {
     return new Uint248(val)
   }
   toBytes (): Bytes31 {
-    return new Bytes31(`0x${this.toBN().toString(16, 62)}`)
+    return new Bytes31(this.toBigNumber().toHexString())
   }
 }
 
@@ -1167,7 +1167,7 @@ export class Uint256 extends UintString {
     return new Uint256(val)
   }
   toBytes (): Bytes32 {
-    return new Bytes32(`0x${this.toBN().toString(16, 64)}`)
+    return new Bytes32(this.toBigNumber().toHexString())
   }
 }
 
